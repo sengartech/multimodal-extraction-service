@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "donizo-multimodal-extraction-service"
+version = "0.1.0"
+description = "Local-first scaffold for converting renovation inputs into typed scope specifications."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [
+  { name = "Rishabh Singh Sengar" }
+]
+dependencies = [
+  "openai>=1.0.0",
+  "pydantic>=2.0.0",
+  "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+anthropic = [
+  "anthropic>=0.34.0"
+]
+dev = [
+  "pytest>=8.0.0"
+]
+
+[project.scripts]
+scope-modeler = "scope_modeler.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/scope_modeler"]
