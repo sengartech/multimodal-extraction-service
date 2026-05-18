@@ -29,6 +29,16 @@ from scope_modeler.extractors.text import (
     TextExtractionDraft,
     TextModelClient,
 )
+from scope_modeler.extractors.vision import (
+    OpenAIVisionModelClient,
+    VisionDraftMaterial,
+    VisionDraftQuestion,
+    VisionDraftTask,
+    VisionExtractionDraft,
+    VisionExtractor,
+    VisionModelClient,
+    VisionObservation,
+)
 
 __all__ = [
     "BaseExtractor",
@@ -46,10 +56,18 @@ __all__ = [
     "LLMTextExtractor",
     "MockTranscriber",
     "ObservationValue",
+    "OpenAIVisionModelClient",
     "TextExtractionDraft",
     "TextModelClient",
     "Transcriber",
     "TranscriptionResult",
     "TranscriptionSegment",
     "TwoPassDrawingParser",
+    "VisionDraftMaterial",
+    "VisionDraftQuestion",
+    "VisionDraftTask",
+    "VisionExtractionDraft",
+    "VisionExtractor",
+    "VisionModelClient",
+    "VisionObservation",
 ]
