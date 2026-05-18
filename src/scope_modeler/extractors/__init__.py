@@ -13,6 +13,13 @@ from scope_modeler.extractors.audio import (
     TranscriptionResult,
     TranscriptionSegment,
 )
+from scope_modeler.extractors.drawing import (
+    DrawingDimension,
+    DrawingGeometrySummary,
+    DrawingPrimitive,
+    DrawingSemanticInference,
+    TwoPassDrawingParser,
+)
 from scope_modeler.extractors.text import (
     DraftMaterial,
     DraftObservation,
@@ -26,6 +33,10 @@ from scope_modeler.extractors.text import (
 __all__ = [
     "BaseExtractor",
     "AudioScopeExtractor",
+    "DrawingDimension",
+    "DrawingGeometrySummary",
+    "DrawingPrimitive",
+    "DrawingSemanticInference",
     "DraftMaterial",
     "DraftObservation",
     "DraftQuestion",
@@ -40,4 +51,5 @@ __all__ = [
     "Transcriber",
     "TranscriptionResult",
     "TranscriptionSegment",
+    "TwoPassDrawingParser",
 ]
