@@ -106,3 +106,7 @@ Before final pricing, I would ask:
 - Which drawn lines are existing walls, new partitions, or openings?
 
 These should remain clarifying questions unless confirmed by stronger evidence.
+
+## 11. Output files
+
+The first real call on `photo_001` produced structurally valid output but suggested photo-only candidate tasks too aggressively. I have improved the vision prompt to prefer observations and clarifying questions over tasks unless the image clearly supports requested work. The initial output is kept as `data/output/vision_photo_01_before_improved_prompt.json`; the corrected run is `data/output/vision_photo_01.json`.

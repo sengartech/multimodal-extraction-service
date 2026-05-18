@@ -1,0 +1,529 @@
+{
+  "capture_id": "photo_001",
+  "extractor_name": "vision_extractor_v1",
+  "modality": "photo",
+  "observations": [
+    {
+      "label": "image_quality",
+      "value": "good overall but slightly dim and cluttered; most room surfaces visible",
+      "confidence": 0.79,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.79,
+        "notes": null
+      },
+      "notes": null
+    },
+    {
+      "label": "visible_elements",
+      "value": "interior room with low ceiling, wood plank flooring, painted white walls and ceiling, exposed stone wall at back and right side, central structural column, surface-mounted track lighting on ceiling, freestanding refrigerator or tall appliance, countertop/work surface on right, cabinet/wardrobe at back right, clothes rack, miscellaneous furniture and stored items",
+      "confidence": 0.79,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.79,
+        "notes": null
+      },
+      "notes": null
+    },
+    {
+      "label": "unclear_regions",
+      "value": "left foreground partially blocked by furniture and bottles, right countertop area clutter obscures lower cabinets and wall details, ceiling-left edge detail unclear near conduit/patch area, exact condition and finish of floor partially obscured by perspective and furniture",
+      "confidence": 0.79,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.79,
+        "notes": null
+      },
+      "notes": "Regions the model could not inspect confidently."
+    },
+    {
+      "label": "room_type",
+      "value": "interior utility/storage or bar-like room",
+      "confidence": 0.69,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.69,
+        "notes": null
+      },
+      "notes": "Space appears occupied and in use, not an active construction site."
+    },
+    {
+      "label": "ceiling_height",
+      "value": "low",
+      "confidence": 0.9,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.9,
+        "notes": null
+      },
+      "notes": "Ceiling appears notably low across the room."
+    },
+    {
+      "label": "floor_finish",
+      "value": "wood-look plank flooring",
+      "confidence": 0.93,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.93,
+        "notes": null
+      },
+      "notes": "Continuous planks visible through the room."
+    },
+    {
+      "label": "wall_finish_mixed",
+      "value": true,
+      "confidence": 0.94,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.94,
+        "notes": null
+      },
+      "notes": "Combination of smooth painted surfaces and exposed stone masonry."
+    },
+    {
+      "label": "exposed_stone_wall_present",
+      "value": true,
+      "confidence": 0.97,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.97,
+        "notes": null
+      },
+      "notes": "Back and right walls show exposed stone."
+    },
+    {
+      "label": "structural_column_present",
+      "value": true,
+      "confidence": 0.95,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.95,
+        "notes": null
+      },
+      "notes": "Rectangular painted column near center of room."
+    },
+    {
+      "label": "ceiling_track_lighting_present",
+      "value": true,
+      "confidence": 0.96,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.96,
+        "notes": null
+      },
+      "notes": "Several spotlights mounted on track or surface rail."
+    },
+    {
+      "label": "visible_ceiling_or_wall_irregularity_left",
+      "value": true,
+      "confidence": 0.77,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.77,
+        "notes": null
+      },
+      "notes": "At left ceiling/wall junction there appears to be a patch, conduit, or surface irregularity."
+    },
+    {
+      "label": "space_cluttered",
+      "value": true,
+      "confidence": 0.98,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.98,
+        "notes": null
+      },
+      "notes": "Furniture, appliances, bottles, clothing rack, and countertop items obstruct access and full inspection."
+    },
+    {
+      "label": "pricing_risk_access_constraints",
+      "value": true,
+      "confidence": 0.89,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.89,
+        "notes": null
+      },
+      "notes": "Occupied and cluttered room may require clearing/protection before work."
+    },
+    {
+      "label": "pricing_risk_hidden_conditions",
+      "value": true,
+      "confidence": 0.84,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.84,
+        "notes": null
+      },
+      "notes": "Stored items and finishes conceal portions of walls, floor edges, and service routes."
+    }
+  ],
+  "candidate_tasks": [
+    {
+      "task_id": "T1",
+      "category": "electrical",
+      "name": {
+        "value": "inspect existing ceiling track lighting installation",
+        "confidence": 0.64,
+        "provenance": [
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "vision_extractor_v1",
+            "confidence": 0.64,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "ceiling lighting track spanning central to right side",
+        "confidence": 0.64,
+        "provenance": [
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "vision_extractor_v1",
+            "confidence": 0.64,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "individual spotlight heads and mounting points",
+        "confidence": 0.64,
+        "provenance": [
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "vision_extractor_v1",
+            "confidence": 0.64,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 1,
+      "confidence": 0.64,
+      "provenance": [
+        {
+          "modality": "photo",
+          "capture_id": "photo_001",
+          "extractor": "vision_extractor_v1",
+          "confidence": 0.64,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "T2",
+      "category": "walls",
+      "name": {
+        "value": "inspect and assess left wall/ceiling junction irregularity or patch",
+        "confidence": 0.69,
+        "provenance": [
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "vision_extractor_v1",
+            "confidence": 0.69,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "upper left wall",
+        "confidence": 0.69,
+        "provenance": [
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "vision_extractor_v1",
+            "confidence": 0.69,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "left ceiling edge near visible protrusion/repair area",
+        "confidence": 0.69,
+        "provenance": [
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "vision_extractor_v1",
+            "confidence": 0.69,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 2,
+      "confidence": 0.69,
+      "provenance": [
+        {
+          "modality": "photo",
+          "capture_id": "photo_001",
+          "extractor": "vision_extractor_v1",
+          "confidence": 0.69,
+          "notes": null
+        }
+      ]
+    }
+  ],
+  "candidate_materials": [],
+  "assumptions": [],
+  "clarifying_questions": [
+    {
+      "question": "Is work intended in this occupied room, or is this only an existing-condition survey?",
+      "severity": "must_have",
+      "reason": "The image shows a furnished, actively used space rather than clear ongoing renovation; scope cannot be inferred from visible evidence alone.",
+      "related_task_ids": [
+        "T1",
+        "T2"
+      ],
+      "rank": 1
+    },
+    {
+      "question": "What is the condition and purpose of the visible irregularity/patch at the upper left wall-ceiling junction?",
+      "severity": "must_have",
+      "reason": "Could indicate prior repair, exposed conduit, crack, or moisture-related damage, which materially affects scope and pricing.",
+      "related_task_ids": [
+        "T2"
+      ],
+      "rank": 2
+    },
+    {
+      "question": "Will the room be fully cleared and protected before any work starts?",
+      "severity": "must_have",
+      "reason": "Furniture, appliances, bottles, and countertop items create access constraints and potential handling/protection costs.",
+      "related_task_ids": [
+        "T1",
+        "T2"
+      ],
+      "rank": 3
+    },
+    {
+      "question": "Are any upgrades or modifications planned for the ceiling lighting and electrical routing?",
+      "severity": "nice_to_have",
+      "reason": "Track lighting is visible, but adequacy, code status, and desired changes are unknown.",
+      "related_task_ids": [
+        "T1"
+      ],
+      "rank": 4
+    },
+    {
+      "question": "Are the exposed stone walls to remain visible, be cleaned/repointed, or be covered/finished?",
+      "severity": "nice_to_have",
+      "reason": "Mixed wall finishes affect finishing scope and treatment methods.",
+      "related_task_ids": [],
+      "rank": 5
+    }
+  ],
+  "confidence": 0.79,
+  "raw_output": {
+    "model_raw_output": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "normalized_draft": {
+      "image_quality": "good overall but slightly dim and cluttered; most room surfaces visible",
+      "visible_elements": [
+        "interior room with low ceiling",
+        "wood plank flooring",
+        "painted white walls and ceiling",
+        "exposed stone wall at back and right side",
+        "central structural column",
+        "surface-mounted track lighting on ceiling",
+        "freestanding refrigerator or tall appliance",
+        "countertop/work surface on right",
+        "cabinet/wardrobe at back right",
+        "clothes rack",
+        "miscellaneous furniture and stored items"
+      ],
+      "unclear_regions": [
+        "left foreground partially blocked by furniture and bottles",
+        "right countertop area clutter obscures lower cabinets and wall details",
+        "ceiling-left edge detail unclear near conduit/patch area",
+        "exact condition and finish of floor partially obscured by perspective and furniture"
+      ],
+      "observations": [
+        {
+          "label": "room_type",
+          "value": "interior utility/storage or bar-like room",
+          "confidence": 0.69,
+          "notes": "Space appears occupied and in use, not an active construction site."
+        },
+        {
+          "label": "ceiling_height",
+          "value": "low",
+          "confidence": 0.9,
+          "notes": "Ceiling appears notably low across the room."
+        },
+        {
+          "label": "floor_finish",
+          "value": "wood-look plank flooring",
+          "confidence": 0.93,
+          "notes": "Continuous planks visible through the room."
+        },
+        {
+          "label": "wall_finish_mixed",
+          "value": true,
+          "confidence": 0.94,
+          "notes": "Combination of smooth painted surfaces and exposed stone masonry."
+        },
+        {
+          "label": "exposed_stone_wall_present",
+          "value": true,
+          "confidence": 0.97,
+          "notes": "Back and right walls show exposed stone."
+        },
+        {
+          "label": "structural_column_present",
+          "value": true,
+          "confidence": 0.95,
+          "notes": "Rectangular painted column near center of room."
+        },
+        {
+          "label": "ceiling_track_lighting_present",
+          "value": true,
+          "confidence": 0.96,
+          "notes": "Several spotlights mounted on track or surface rail."
+        },
+        {
+          "label": "visible_ceiling_or_wall_irregularity_left",
+          "value": true,
+          "confidence": 0.77,
+          "notes": "At left ceiling/wall junction there appears to be a patch, conduit, or surface irregularity."
+        },
+        {
+          "label": "space_cluttered",
+          "value": true,
+          "confidence": 0.98,
+          "notes": "Furniture, appliances, bottles, clothing rack, and countertop items obstruct access and full inspection."
+        },
+        {
+          "label": "pricing_risk_access_constraints",
+          "value": true,
+          "confidence": 0.89,
+          "notes": "Occupied and cluttered room may require clearing/protection before work."
+        },
+        {
+          "label": "pricing_risk_hidden_conditions",
+          "value": true,
+          "confidence": 0.84,
+          "notes": "Stored items and finishes conceal portions of walls, floor edges, and service routes."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T1",
+          "category": "electrical",
+          "name": "inspect existing ceiling track lighting installation",
+          "point_a": "ceiling lighting track spanning central to right side",
+          "point_b": "individual spotlight heads and mounting points",
+          "step_number": 1,
+          "confidence": 0.64
+        },
+        {
+          "task_id": "T2",
+          "category": "walls",
+          "name": "inspect and assess left wall/ceiling junction irregularity or patch",
+          "point_a": "upper left wall",
+          "point_b": "left ceiling edge near visible protrusion/repair area",
+          "step_number": 2,
+          "confidence": 0.69
+        }
+      ],
+      "materials": [],
+      "clarifying_questions": [
+        {
+          "question": "Is work intended in this occupied room, or is this only an existing-condition survey?",
+          "severity": "must_have",
+          "reason": "The image shows a furnished, actively used space rather than clear ongoing renovation; scope cannot be inferred from visible evidence alone.",
+          "related_task_ids": [
+            "T1",
+            "T2"
+          ],
+          "rank": 1,
+          "confidence": 0.95
+        },
+        {
+          "question": "What is the condition and purpose of the visible irregularity/patch at the upper left wall-ceiling junction?",
+          "severity": "must_have",
+          "reason": "Could indicate prior repair, exposed conduit, crack, or moisture-related damage, which materially affects scope and pricing.",
+          "related_task_ids": [
+            "T2"
+          ],
+          "rank": 2,
+          "confidence": 0.9
+        },
+        {
+          "question": "Will the room be fully cleared and protected before any work starts?",
+          "severity": "must_have",
+          "reason": "Furniture, appliances, bottles, and countertop items create access constraints and potential handling/protection costs.",
+          "related_task_ids": [
+            "T1",
+            "T2"
+          ],
+          "rank": 3,
+          "confidence": 0.94
+        },
+        {
+          "question": "Are any upgrades or modifications planned for the ceiling lighting and electrical routing?",
+          "severity": "nice_to_have",
+          "reason": "Track lighting is visible, but adequacy, code status, and desired changes are unknown.",
+          "related_task_ids": [
+            "T1"
+          ],
+          "rank": 4,
+          "confidence": 0.82
+        },
+        {
+          "question": "Are the exposed stone walls to remain visible, be cleaned/repointed, or be covered/finished?",
+          "severity": "nice_to_have",
+          "reason": "Mixed wall finishes affect finishing scope and treatment methods.",
+          "related_task_ids": [],
+          "rank": 5,
+          "confidence": 0.78
+        }
+      ],
+      "confidence": 0.79,
+      "raw_output": {
+        "provider": "openai",
+        "model": "gpt-5.4"
+      }
+    }
+  }
+}

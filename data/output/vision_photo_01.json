@@ -1,0 +1,338 @@
+{
+  "capture_id": "photo_001",
+  "extractor_name": "vision_extractor_v1",
+  "modality": "photo",
+  "observations": [
+    {
+      "label": "image_quality",
+      "value": "good",
+      "confidence": 0.84,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.84,
+        "notes": null
+      },
+      "notes": null
+    },
+    {
+      "label": "visible_elements",
+      "value": "narrow interior room or basement-like space, low ceiling, painted white walls and ceiling, exposed stone wall at back, wood plank flooring, structural column in center, track lighting mounted to ceiling, countertop/worksurface on right, refrigerator or tall white appliance on left, cabinet/storage unit at back right, cluttered furnishings and personal items, clothing rack at back",
+      "confidence": 0.84,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.84,
+        "notes": null
+      },
+      "notes": null
+    },
+    {
+      "label": "unclear_regions",
+      "value": "left upper wall-ceiling junction where a small protrusion or patch is visible, ceiling surface overall due to dim lighting and slight haze, area behind furniture and appliances along left wall, far-right back corner partly blocked by furniture",
+      "confidence": 0.84,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.84,
+        "notes": null
+      },
+      "notes": "Regions the model could not inspect confidently."
+    },
+    {
+      "label": "space_type",
+      "value": "finished interior utility/storage/work area",
+      "confidence": 0.78,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.78,
+        "notes": null
+      },
+      "notes": "Appears occupied and in use rather than an active construction zone."
+    },
+    {
+      "label": "ceiling_height",
+      "value": "low",
+      "confidence": 0.92,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.92,
+        "notes": null
+      },
+      "notes": "Ceiling appears notably low across the room, which may affect access and labor."
+    },
+    {
+      "label": "floor_finish",
+      "value": "wood-look plank flooring",
+      "confidence": 0.9,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.9,
+        "notes": null
+      },
+      "notes": "Flooring appears installed and continuous through visible area."
+    },
+    {
+      "label": "rear_wall_finish",
+      "value": "exposed stone masonry",
+      "confidence": 0.93,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.93,
+        "notes": null
+      },
+      "notes": "Back wall appears to be exposed stone or stone veneer."
+    },
+    {
+      "label": "lighting_type",
+      "value": "ceiling track lights",
+      "confidence": 0.95,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.95,
+        "notes": null
+      },
+      "notes": "Multiple directional fixtures are visible."
+    },
+    {
+      "label": "room_condition",
+      "value": "furnished and cluttered",
+      "confidence": 0.95,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.95,
+        "notes": null
+      },
+      "notes": "Appliances, bottles, desk items, and clothing rack reduce clear access."
+    },
+    {
+      "label": "access_constraint",
+      "value": true,
+      "confidence": 0.94,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.94,
+        "notes": null
+      },
+      "notes": "Narrow circulation path and stored items would likely require moving contents before work."
+    },
+    {
+      "label": "visible_damage",
+      "value": "no clear major damage visible",
+      "confidence": 0.66,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.66,
+        "notes": null
+      },
+      "notes": "No obvious cracks, holes, or demolition shown from this angle."
+    },
+    {
+      "label": "possible_wall_ceiling_irregularity",
+      "value": true,
+      "confidence": 0.53,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_001",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.53,
+        "notes": null
+      },
+      "notes": "At the upper left wall-ceiling junction there appears to be a small protrusion, patch, or cable; detail is unclear."
+    }
+  ],
+  "candidate_tasks": [],
+  "candidate_materials": [],
+  "assumptions": [],
+  "clarifying_questions": [
+    {
+      "question": "What work is actually requested in this room, if any? The photo mainly shows an existing finished space rather than a clear construction scope.",
+      "severity": "must_have",
+      "reason": "No specific renovation task is visually evident, so pricing cannot be tied to a defined scope.",
+      "related_task_ids": [],
+      "rank": 1
+    },
+    {
+      "question": "Will the furniture, appliances, bottles, desk contents, and clothing rack be removed before work starts?",
+      "severity": "must_have",
+      "reason": "The room is cluttered and narrow, which can significantly affect access, protection needs, and labor time.",
+      "related_task_ids": [],
+      "rank": 2
+    },
+    {
+      "question": "Is the low ceiling an existing acceptable condition, or is ceiling modification/repair part of the intended scope?",
+      "severity": "nice_to_have",
+      "reason": "Low headroom may affect feasible methods, equipment, and installation options.",
+      "related_task_ids": [],
+      "rank": 3
+    },
+    {
+      "question": "What is the condition of the upper left wall-ceiling junction where a small irregularity is visible?",
+      "severity": "nice_to_have",
+      "reason": "The image suggests a possible patch, cable, or localized defect, but it is not clear enough to assess action needed.",
+      "related_task_ids": [],
+      "rank": 4
+    },
+    {
+      "question": "Are there any hidden moisture, waterproofing, or basement-related issues in this space?",
+      "severity": "nice_to_have",
+      "reason": "The room appears basement-like with an exposed stone wall, which can carry pricing risk if dampness or sealing work is involved.",
+      "related_task_ids": [],
+      "rank": 5
+    }
+  ],
+  "confidence": 0.84,
+  "raw_output": {
+    "model_raw_output": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "normalized_draft": {
+      "image_quality": "good",
+      "visible_elements": [
+        "narrow interior room or basement-like space",
+        "low ceiling",
+        "painted white walls and ceiling",
+        "exposed stone wall at back",
+        "wood plank flooring",
+        "structural column in center",
+        "track lighting mounted to ceiling",
+        "countertop/worksurface on right",
+        "refrigerator or tall white appliance on left",
+        "cabinet/storage unit at back right",
+        "cluttered furnishings and personal items",
+        "clothing rack at back"
+      ],
+      "unclear_regions": [
+        "left upper wall-ceiling junction where a small protrusion or patch is visible",
+        "ceiling surface overall due to dim lighting and slight haze",
+        "area behind furniture and appliances along left wall",
+        "far-right back corner partly blocked by furniture"
+      ],
+      "observations": [
+        {
+          "label": "space_type",
+          "value": "finished interior utility/storage/work area",
+          "confidence": 0.78,
+          "notes": "Appears occupied and in use rather than an active construction zone."
+        },
+        {
+          "label": "ceiling_height",
+          "value": "low",
+          "confidence": 0.92,
+          "notes": "Ceiling appears notably low across the room, which may affect access and labor."
+        },
+        {
+          "label": "floor_finish",
+          "value": "wood-look plank flooring",
+          "confidence": 0.9,
+          "notes": "Flooring appears installed and continuous through visible area."
+        },
+        {
+          "label": "rear_wall_finish",
+          "value": "exposed stone masonry",
+          "confidence": 0.93,
+          "notes": "Back wall appears to be exposed stone or stone veneer."
+        },
+        {
+          "label": "lighting_type",
+          "value": "ceiling track lights",
+          "confidence": 0.95,
+          "notes": "Multiple directional fixtures are visible."
+        },
+        {
+          "label": "room_condition",
+          "value": "furnished and cluttered",
+          "confidence": 0.95,
+          "notes": "Appliances, bottles, desk items, and clothing rack reduce clear access."
+        },
+        {
+          "label": "access_constraint",
+          "value": true,
+          "confidence": 0.94,
+          "notes": "Narrow circulation path and stored items would likely require moving contents before work."
+        },
+        {
+          "label": "visible_damage",
+          "value": "no clear major damage visible",
+          "confidence": 0.66,
+          "notes": "No obvious cracks, holes, or demolition shown from this angle."
+        },
+        {
+          "label": "possible_wall_ceiling_irregularity",
+          "value": true,
+          "confidence": 0.53,
+          "notes": "At the upper left wall-ceiling junction there appears to be a small protrusion, patch, or cable; detail is unclear."
+        }
+      ],
+      "tasks": [],
+      "materials": [],
+      "clarifying_questions": [
+        {
+          "question": "What work is actually requested in this room, if any? The photo mainly shows an existing finished space rather than a clear construction scope.",
+          "severity": "must_have",
+          "reason": "No specific renovation task is visually evident, so pricing cannot be tied to a defined scope.",
+          "related_task_ids": [],
+          "rank": 1,
+          "confidence": 0.98
+        },
+        {
+          "question": "Will the furniture, appliances, bottles, desk contents, and clothing rack be removed before work starts?",
+          "severity": "must_have",
+          "reason": "The room is cluttered and narrow, which can significantly affect access, protection needs, and labor time.",
+          "related_task_ids": [],
+          "rank": 2,
+          "confidence": 0.96
+        },
+        {
+          "question": "Is the low ceiling an existing acceptable condition, or is ceiling modification/repair part of the intended scope?",
+          "severity": "nice_to_have",
+          "reason": "Low headroom may affect feasible methods, equipment, and installation options.",
+          "related_task_ids": [],
+          "rank": 3,
+          "confidence": 0.83
+        },
+        {
+          "question": "What is the condition of the upper left wall-ceiling junction where a small irregularity is visible?",
+          "severity": "nice_to_have",
+          "reason": "The image suggests a possible patch, cable, or localized defect, but it is not clear enough to assess action needed.",
+          "related_task_ids": [],
+          "rank": 4,
+          "confidence": 0.71
+        },
+        {
+          "question": "Are there any hidden moisture, waterproofing, or basement-related issues in this space?",
+          "severity": "nice_to_have",
+          "reason": "The room appears basement-like with an exposed stone wall, which can carry pricing risk if dampness or sealing work is involved.",
+          "related_task_ids": [],
+          "rank": 5,
+          "confidence": 0.67
+        }
+      ],
+      "confidence": 0.84,
+      "raw_output": {
+        "provider": "openai",
+        "model": "gpt-5.4"
+      }
+    }
+  }
+}

@@ -1,0 +1,376 @@
+{
+  "capture_id": "photo_002",
+  "extractor_name": "vision_extractor_v1",
+  "modality": "photo",
+  "observations": [
+    {
+      "label": "image_quality",
+      "value": "good",
+      "confidence": 0.89,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.89,
+        "notes": null
+      },
+      "notes": null
+    },
+    {
+      "label": "visible_elements",
+      "value": "narrow interior corridor, exposed rough stone or masonry wall on the right, painted plaster wall on the left, light-colored floor tiles in the corridor, wood or laminate flooring in the foreground, small step/threshold transition between floor finishes, small sink and countertop/cabinet at the far end, recessed ceiling light, baseboards/trim along walls, loose cables on the floor in the foreground, trash bin and broom at left foreground",
+      "confidence": 0.89,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.89,
+        "notes": null
+      },
+      "notes": null
+    },
+    {
+      "label": "unclear_regions",
+      "value": "foreground floor transition detail and exact height of step, condition behind/under the sink cabinet, whether the exposed wall is intentionally unfinished or stripped for repair, presence of moisture, efflorescence, or active water damage on the exposed wall, full ceiling condition near the right upper edge",
+      "confidence": 0.89,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.89,
+        "notes": null
+      },
+      "notes": "Regions the model could not inspect confidently."
+    },
+    {
+      "label": "space_type",
+      "value": "narrow interior passage or kitchenette corridor",
+      "confidence": 0.86,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.86,
+        "notes": null
+      },
+      "notes": "Small sink and cabinet visible at the end of the corridor."
+    },
+    {
+      "label": "right_wall_finish",
+      "value": "exposed masonry/stone with irregular plaster remnants",
+      "confidence": 0.94,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.94,
+        "notes": null
+      },
+      "notes": "Large portion of right wall appears stripped back to rough substrate."
+    },
+    {
+      "label": "left_wall_finish",
+      "value": "painted smooth wall",
+      "confidence": 0.95,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.95,
+        "notes": null
+      },
+      "notes": "Left wall appears finished and painted beige."
+    },
+    {
+      "label": "floor_finish_corridor",
+      "value": "ceramic or porcelain tile",
+      "confidence": 0.93,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.93,
+        "notes": null
+      },
+      "notes": "Light-colored square tiles visible in the corridor."
+    },
+    {
+      "label": "floor_finish_foreground",
+      "value": "wood or laminate plank flooring",
+      "confidence": 0.85,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.85,
+        "notes": null
+      },
+      "notes": "Different flooring material visible before the step."
+    },
+    {
+      "label": "level_change",
+      "value": true,
+      "confidence": 0.96,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.96,
+        "notes": null
+      },
+      "notes": "A step or raised threshold separates foreground floor from tiled corridor."
+    },
+    {
+      "label": "trip_hazard",
+      "value": true,
+      "confidence": 0.93,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.93,
+        "notes": null
+      },
+      "notes": "Step transition and loose cables in foreground increase access/safety risk."
+    },
+    {
+      "label": "sink_present",
+      "value": true,
+      "confidence": 0.97,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.97,
+        "notes": null
+      },
+      "notes": "Small sink with faucet and undercounter cabinet is visible at the end."
+    },
+    {
+      "label": "ceiling_light_present",
+      "value": true,
+      "confidence": 0.95,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.95,
+        "notes": null
+      },
+      "notes": "One recessed ceiling light is on."
+    },
+    {
+      "label": "site_access_constraint",
+      "value": "narrow working width",
+      "confidence": 0.91,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.91,
+        "notes": null
+      },
+      "notes": "Tight corridor may limit material handling and labor productivity."
+    },
+    {
+      "label": "housekeeping_clutter",
+      "value": "minor",
+      "confidence": 0.82,
+      "provenance": {
+        "modality": "photo",
+        "capture_id": "photo_002",
+        "extractor": "vision_extractor_v1",
+        "confidence": 0.82,
+        "notes": null
+      },
+      "notes": "Trash bin, broom, bottles, and cables are present but passage remains mostly open."
+    }
+  ],
+  "candidate_tasks": [],
+  "candidate_materials": [],
+  "assumptions": [],
+  "clarifying_questions": [
+    {
+      "question": "Is the exposed right wall intended to remain visible stone/masonry, or is it to be replastered/finished?",
+      "severity": "must_have",
+      "reason": "Finish scope changes labor, materials, and preparation substantially.",
+      "related_task_ids": [],
+      "rank": 1
+    },
+    {
+      "question": "Is there any active dampness, water ingress, or salt/efflorescence on the exposed wall?",
+      "severity": "must_have",
+      "reason": "Moisture problems would require diagnosis and remedial treatment before finishing.",
+      "related_task_ids": [],
+      "rank": 2
+    },
+    {
+      "question": "What is the exact height and required treatment of the floor level change at the corridor entrance?",
+      "severity": "nice_to_have",
+      "reason": "Threshold/transition details affect flooring, trim, and safety pricing.",
+      "related_task_ids": [],
+      "rank": 3
+    },
+    {
+      "question": "Will the sink/cabinet area remain in place, be replaced, or need protection during works?",
+      "severity": "nice_to_have",
+      "reason": "Affects demolition/protection scope and access in the narrow corridor.",
+      "related_task_ids": [],
+      "rank": 4
+    },
+    {
+      "question": "Are the loose cables in the foreground temporary, or do they require permanent rerouting/finishing?",
+      "severity": "nice_to_have",
+      "reason": "Could add electrical or carpentry scope and affects site safety.",
+      "related_task_ids": [],
+      "rank": 5
+    }
+  ],
+  "confidence": 0.89,
+  "raw_output": {
+    "model_raw_output": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "normalized_draft": {
+      "image_quality": "good",
+      "visible_elements": [
+        "narrow interior corridor",
+        "exposed rough stone or masonry wall on the right",
+        "painted plaster wall on the left",
+        "light-colored floor tiles in the corridor",
+        "wood or laminate flooring in the foreground",
+        "small step/threshold transition between floor finishes",
+        "small sink and countertop/cabinet at the far end",
+        "recessed ceiling light",
+        "baseboards/trim along walls",
+        "loose cables on the floor in the foreground",
+        "trash bin and broom at left foreground"
+      ],
+      "unclear_regions": [
+        "foreground floor transition detail and exact height of step",
+        "condition behind/under the sink cabinet",
+        "whether the exposed wall is intentionally unfinished or stripped for repair",
+        "presence of moisture, efflorescence, or active water damage on the exposed wall",
+        "full ceiling condition near the right upper edge"
+      ],
+      "observations": [
+        {
+          "label": "space_type",
+          "value": "narrow interior passage or kitchenette corridor",
+          "confidence": 0.86,
+          "notes": "Small sink and cabinet visible at the end of the corridor."
+        },
+        {
+          "label": "right_wall_finish",
+          "value": "exposed masonry/stone with irregular plaster remnants",
+          "confidence": 0.94,
+          "notes": "Large portion of right wall appears stripped back to rough substrate."
+        },
+        {
+          "label": "left_wall_finish",
+          "value": "painted smooth wall",
+          "confidence": 0.95,
+          "notes": "Left wall appears finished and painted beige."
+        },
+        {
+          "label": "floor_finish_corridor",
+          "value": "ceramic or porcelain tile",
+          "confidence": 0.93,
+          "notes": "Light-colored square tiles visible in the corridor."
+        },
+        {
+          "label": "floor_finish_foreground",
+          "value": "wood or laminate plank flooring",
+          "confidence": 0.85,
+          "notes": "Different flooring material visible before the step."
+        },
+        {
+          "label": "level_change",
+          "value": true,
+          "confidence": 0.96,
+          "notes": "A step or raised threshold separates foreground floor from tiled corridor."
+        },
+        {
+          "label": "trip_hazard",
+          "value": true,
+          "confidence": 0.93,
+          "notes": "Step transition and loose cables in foreground increase access/safety risk."
+        },
+        {
+          "label": "sink_present",
+          "value": true,
+          "confidence": 0.97,
+          "notes": "Small sink with faucet and undercounter cabinet is visible at the end."
+        },
+        {
+          "label": "ceiling_light_present",
+          "value": true,
+          "confidence": 0.95,
+          "notes": "One recessed ceiling light is on."
+        },
+        {
+          "label": "site_access_constraint",
+          "value": "narrow working width",
+          "confidence": 0.91,
+          "notes": "Tight corridor may limit material handling and labor productivity."
+        },
+        {
+          "label": "housekeeping_clutter",
+          "value": "minor",
+          "confidence": 0.82,
+          "notes": "Trash bin, broom, bottles, and cables are present but passage remains mostly open."
+        }
+      ],
+      "tasks": [],
+      "materials": [],
+      "clarifying_questions": [
+        {
+          "question": "Is the exposed right wall intended to remain visible stone/masonry, or is it to be replastered/finished?",
+          "severity": "must_have",
+          "reason": "Finish scope changes labor, materials, and preparation substantially.",
+          "related_task_ids": [],
+          "rank": 1,
+          "confidence": 0.94
+        },
+        {
+          "question": "Is there any active dampness, water ingress, or salt/efflorescence on the exposed wall?",
+          "severity": "must_have",
+          "reason": "Moisture problems would require diagnosis and remedial treatment before finishing.",
+          "related_task_ids": [],
+          "rank": 2,
+          "confidence": 0.85
+        },
+        {
+          "question": "What is the exact height and required treatment of the floor level change at the corridor entrance?",
+          "severity": "nice_to_have",
+          "reason": "Threshold/transition details affect flooring, trim, and safety pricing.",
+          "related_task_ids": [],
+          "rank": 3,
+          "confidence": 0.88
+        },
+        {
+          "question": "Will the sink/cabinet area remain in place, be replaced, or need protection during works?",
+          "severity": "nice_to_have",
+          "reason": "Affects demolition/protection scope and access in the narrow corridor.",
+          "related_task_ids": [],
+          "rank": 4,
+          "confidence": 0.86
+        },
+        {
+          "question": "Are the loose cables in the foreground temporary, or do they require permanent rerouting/finishing?",
+          "severity": "nice_to_have",
+          "reason": "Could add electrical or carpentry scope and affects site safety.",
+          "related_task_ids": [],
+          "rank": 5,
+          "confidence": 0.84
+        }
+      ],
+      "confidence": 0.89,
+      "raw_output": {
+        "provider": "openai",
+        "model": "gpt-5.4"
+      }
+    }
+  }
+}

@@ -38,6 +38,7 @@ from scope_modeler.extractors.vision import (
     VisionExtractor,
     VisionModelClient,
     VisionObservation,
+    OpenAIVisionExtractionResponse,
 )
 
 __all__ = [
@@ -70,4 +71,5 @@ __all__ = [
     "VisionExtractor",
     "VisionModelClient",
     "VisionObservation",
+    "OpenAIVisionExtractionResponse",
 ]
