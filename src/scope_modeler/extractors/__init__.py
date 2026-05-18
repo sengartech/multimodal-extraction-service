@@ -6,6 +6,13 @@ from scope_modeler.extractors.base import (
     ExtractorResult,
     ObservationValue,
 )
+from scope_modeler.extractors.audio import (
+    AudioScopeExtractor,
+    MockTranscriber,
+    Transcriber,
+    TranscriptionResult,
+    TranscriptionSegment,
+)
 from scope_modeler.extractors.text import (
     DraftMaterial,
     DraftObservation,
@@ -18,6 +25,7 @@ from scope_modeler.extractors.text import (
 
 __all__ = [
     "BaseExtractor",
+    "AudioScopeExtractor",
     "DraftMaterial",
     "DraftObservation",
     "DraftQuestion",
@@ -25,7 +33,11 @@ __all__ = [
     "ExtractedObservation",
     "ExtractorResult",
     "LLMTextExtractor",
+    "MockTranscriber",
     "ObservationValue",
     "TextExtractionDraft",
     "TextModelClient",
+    "Transcriber",
+    "TranscriptionResult",
+    "TranscriptionSegment",
 ]

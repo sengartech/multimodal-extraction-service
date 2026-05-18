@@ -98,6 +98,107 @@ class TextModelClient(Protocol):
         """Return a generic construction-scope draft for the provided text note."""
 
 
+def map_text_draft_to_extractor_result(
+    *,
+    capture: InputCapture,
+    draft: TextExtractionDraft,
+    extractor_name: str,
+    modality: Modality,
+    raw_output: dict[str, object] | None = None,
+) -> ExtractorResult:
+    """Map a text-model draft into the shared extractor result schema."""
+
+    return ExtractorResult(
+        capture_id=capture.capture_id,
+        extractor_name=extractor_name,
+        modality=modality,
+        observations=[
+            ExtractedObservation(
+                label=observation.label,
+                value=observation.value,
+                confidence=observation.confidence,
+                provenance=_provenance(capture, extractor_name, modality, observation.confidence),
+                notes=observation.notes or observation.evidence_quote,
+            )
+            for observation in draft.observations
+        ],
+        candidate_tasks=[
+            Task(
+                task_id=task.task_id,
+                category=task.category,
+                name=_versioned_text(capture, extractor_name, modality, task.name, task.confidence),
+                point_a=_versioned_text(
+                    capture,
+                    extractor_name,
+                    modality,
+                    task.point_a,
+                    task.confidence,
+                ),
+                point_b=_versioned_text(
+                    capture,
+                    extractor_name,
+                    modality,
+                    task.point_b,
+                    task.confidence,
+                ),
+                step_number=task.step_number,
+                confidence=task.confidence,
+                provenance=[_provenance(capture, extractor_name, modality, task.confidence)],
+            )
+            for task in draft.tasks
+        ],
+        candidate_materials=[
+            Material(
+                material_id=material.material_id,
+                name=_versioned_text(
+                    capture,
+                    extractor_name,
+                    modality,
+                    material.name,
+                    material.confidence,
+                ),
+                estimated_quantity=_versioned_quantity(
+                    capture,
+                    extractor_name,
+                    modality,
+                    material.estimated_quantity,
+                    material.confidence,
+                ),
+                unit=material.unit,
+                related_task_ids=material.related_task_ids,
+            )
+            for material in draft.materials
+        ],
+        assumptions=[
+            _versioned_text(
+                capture,
+                extractor_name,
+                modality,
+                str(assumption.value),
+                assumption.confidence,
+            )
+            for assumption in draft.assumptions
+            if assumption.value is not None
+        ],
+        clarifying_questions=[
+            ClarifyingQuestion(
+                question=question.question,
+                severity=question.severity,
+                reason=question.reason,
+                related_task_ids=question.related_task_ids,
+                rank=question.rank,
+            )
+            for question in draft.clarifying_questions
+        ],
+        confidence=draft.confidence,
+        raw_output=raw_output
+        or {
+            "model_raw_output": draft.raw_output,
+            "normalized_draft": draft.model_dump(mode="json"),
+        },
+    )
+
+
 class LLMTextExtractor:
     """Text extractor that maps model-client drafts into shared extractor contracts."""
 
@@ -118,97 +219,51 @@ class LLMTextExtractor:
         return self._map_draft(capture, draft)
 
     def _map_draft(self, capture: InputCapture, draft: TextExtractionDraft) -> ExtractorResult:
-        return ExtractorResult(
-            capture_id=capture.capture_id,
+        return map_text_draft_to_extractor_result(
+            capture=capture,
+            draft=draft,
             extractor_name=self.extractor_name,
             modality=Modality.TEXT,
-            observations=[
-                ExtractedObservation(
-                    label=observation.label,
-                    value=observation.value,
-                    confidence=observation.confidence,
-                    provenance=self._provenance(capture, observation.confidence),
-                    notes=observation.notes or observation.evidence_quote,
-                )
-                for observation in draft.observations
-            ],
-            candidate_tasks=[
-                Task(
-                    task_id=task.task_id,
-                    category=task.category,
-                    name=self._versioned_text(capture, task.name, task.confidence),
-                    point_a=self._versioned_text(capture, task.point_a, task.confidence),
-                    point_b=self._versioned_text(capture, task.point_b, task.confidence),
-                    step_number=task.step_number,
-                    confidence=task.confidence,
-                    provenance=[self._provenance(capture, task.confidence)],
-                )
-                for task in draft.tasks
-            ],
-            candidate_materials=[
-                Material(
-                    material_id=material.material_id,
-                    name=self._versioned_text(capture, material.name, material.confidence),
-                    estimated_quantity=self._versioned_quantity(
-                        capture,
-                        material.estimated_quantity,
-                        material.confidence,
-                    ),
-                    unit=material.unit,
-                    related_task_ids=material.related_task_ids,
-                )
-                for material in draft.materials
-            ],
-            assumptions=[
-                self._versioned_text(capture, str(assumption.value), assumption.confidence)
-                for assumption in draft.assumptions
-                if assumption.value is not None
-            ],
-            clarifying_questions=[
-                ClarifyingQuestion(
-                    question=question.question,
-                    severity=question.severity,
-                    reason=question.reason,
-                    related_task_ids=question.related_task_ids,
-                    rank=question.rank,
-                )
-                for question in draft.clarifying_questions
-            ],
-            confidence=draft.confidence,
-            raw_output={
-                "model_raw_output": draft.raw_output,
-                "normalized_draft": draft.model_dump(mode="json"),
-            },
         )
 
-    def _provenance(self, capture: InputCapture, confidence: float) -> Provenance:
-        return Provenance(
-            modality=Modality.TEXT,
-            capture_id=capture.capture_id,
-            extractor=self.extractor_name,
-            confidence=confidence,
-        )
 
-    def _versioned_text(
-        self,
-        capture: InputCapture,
-        value: str,
-        confidence: float,
-    ) -> VersionedField[str]:
-        return VersionedField[str](
-            value=value,
-            confidence=confidence,
-            provenance=[self._provenance(capture, confidence)],
-        )
+def _provenance(
+    capture: InputCapture,
+    extractor_name: str,
+    modality: Modality,
+    confidence: float,
+) -> Provenance:
+    return Provenance(
+        modality=modality,
+        capture_id=capture.capture_id,
+        extractor=extractor_name,
+        confidence=confidence,
+    )
 
-    def _versioned_quantity(
-        self,
-        capture: InputCapture,
-        value: float,
-        confidence: float,
-    ) -> VersionedField[float]:
-        return VersionedField[float](
-            value=value,
-            confidence=confidence,
-            provenance=[self._provenance(capture, confidence)],
-        )
+
+def _versioned_text(
+    capture: InputCapture,
+    extractor_name: str,
+    modality: Modality,
+    value: str,
+    confidence: float,
+) -> VersionedField[str]:
+    return VersionedField[str](
+        value=value,
+        confidence=confidence,
+        provenance=[_provenance(capture, extractor_name, modality, confidence)],
+    )
+
+
+def _versioned_quantity(
+    capture: InputCapture,
+    extractor_name: str,
+    modality: Modality,
+    value: float,
+    confidence: float,
+) -> VersionedField[float]:
+    return VersionedField[float](
+        value=value,
+        confidence=confidence,
+        provenance=[_provenance(capture, extractor_name, modality, confidence)],
+    )
