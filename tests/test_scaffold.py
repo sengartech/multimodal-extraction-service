@@ -1,5 +1,5 @@
 from scope_modeler.cli import main
-from scope_modeler.models.scope import ScaffoldModel
+from scope_modeler.models import VersionedField
 
 
 def test_cli_help_runs(capsys):
@@ -12,6 +12,6 @@ def test_cli_help_runs(capsys):
 
 
 def test_pydantic_v2_model_wiring():
-    model = ScaffoldModel(name="donizo")
+    model = VersionedField[str](value="donizo", confidence=1.0)
 
-    assert model.model_dump() == {"name": "donizo"}
+    assert model.model_dump()["value"] == "donizo"
