@@ -84,3 +84,6 @@ docs/
 data/input/
 data/output/
 ```
+## Notes:
+
+`data/input/manifest.json` represents the normalized ingestion envelope for this assignment. In production, this would be created by the upload/intake layer from object storage metadata and customer job metadata. For the technical test, it is checked in as a reproducible fixture.

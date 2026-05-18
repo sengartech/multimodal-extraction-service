@@ -1,0 +1,76 @@
+{
+  "job_id": "wine_bar_staff_showers_001",
+  "received_at": "2026-05-18T17:00:00+02:00",
+  "locale": "fr-FR",
+  "customer_context": {
+    "site_type": "wine_bar",
+    "location_hint": "Paris",
+    "requested_turnaround_minutes": 60
+  },
+  "captures": [
+    {
+      "capture_id": "text_note_001",
+      "capture_type": "contractor_note",
+      "modality": "text",
+      "path": "data/input/customer_text_fr.txt",
+      "language": "fr",
+      "description": "Original three-line French contractor text note."
+    },
+    {
+      "capture_id": "drawing_floor_plan_001",
+      "capture_type": "floor_plan",
+      "modality": "drawing",
+      "path": "data/input/drawings/floor_plan.png",
+      "language": null,
+      "description": "Hand-drawn floor plan from customer brief."
+    },
+    {
+      "capture_id": "photo_001",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_01.png",
+      "language": null,
+      "description": "Existing-space photograph 1."
+    },
+    {
+      "capture_id": "photo_002",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_02.png",
+      "language": null,
+      "description": "Existing-space photograph 2."
+    },
+    {
+      "capture_id": "photo_003",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_03.png",
+      "language": null,
+      "description": "Existing-space photograph 3."
+    },
+    {
+      "capture_id": "photo_004",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_04.png",
+      "language": null,
+      "description": "Existing-space photograph 4."
+    },
+    {
+      "capture_id": "photo_005",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_05.png",
+      "language": null,
+      "description": "Existing-space photograph 5."
+    },
+    {
+      "capture_id": "audio_mock_001",
+      "capture_type": "audio_recording",
+      "modality": "audio",
+      "path": "data/input/audios/mock_voice_note_fr.txt",
+      "language": "fr",
+      "description": "Synthetic French audio transcript used by MockTranscriber."
+    }
+  ]
+}
