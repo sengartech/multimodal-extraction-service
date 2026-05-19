@@ -1,93 +1,68 @@
 # Tradeoff Sliders
 
-As per deliverables, this document records the positions I would take for the first production version of the scope modeling system. These are not permanent rules; they are operating defaults that should be revisited as evaluation data grows.
+This document records the positions I would take for the first production version of the scope modeling system. These are operating defaults, not permanent rules.
 
 ## 1. Cost vs Accuracy
 
 ### Position
 
-I would not trade 5% extraction accuracy for 50% cost reduction on fields that directly affect pricing, scope boundaries, or compliance. I would consider that trade for low-impact descriptive fields.
+I would not trade 5% extraction accuracy for 50% cost reduction on pricing-critical fields.
 
-### My line
+My line is:
 
-I split fields into two groups:
+- no cost tradeoff for fields that affect scope, quantities, pricing readiness, safety, or compliance
+- cost tradeoff is acceptable for low-risk descriptive fields
 
-**Pricing-critical fields**
-- task existence
-- quantities
-- dimensions
-- drainage/water/electrical requirements
-- regulatory constraints
-- must-have clarifying questions
-- confidence and provenance
+### Rationale
 
-For these, I would favor accuracy. A false saving on model cost can become expensive if it causes a wrong quote, missed scope, or bad contractor/customer experience.
+A cheaper model is not actually cheaper if it causes a wrong quote, missed scope, or unnecessary contractor/customer back-and-forth.
 
-**Non-critical fields**
-- wording of description
-- title phrasing
-- cosmetic observations
-- low-impact nice-to-have questions
+For this assignment, I used real model calls for text, drawing, vision, and fusion, but cached the typed outputs. That gives accuracy where needed while avoiding repeated calls during fusion and eval.
 
-For these, I would trade some accuracy for cost reduction.
+### Where I would save cost
 
-### Current implementation choice
+I would use cheaper models for:
 
-The vision model is configurable through environment variables. For routine photo extraction, I plan to use GPT-5.4. GPT-5.5 is reserved as an edge-path model, not the default.
+- clean text notes
+- high-quality photos with simple extraction
+- formatting/summarization
+- non-critical description wording
 
-The intended routing is:
+I would use stronger models for:
 
-- routine path: GPT-5.4
-- cheaper path later: smaller model for clean, low-risk photos
-- edge path: GPT-5.5 only when confidence is low, image quality is poor, or modalities conflict
-- stop condition: after bounded retries/escalation, route to human review instead of unlimited model calls
-
-### Why
-
-In construction pricing, the cost of a wrong structured scope can be much higher than the cost of a model call. But not every field deserves the same model budget. The system should spend more where the business risk is higher.
+- blurry photos
+- ambiguous drawings
+- cross-modal conflicts
+- final fusion when pricing blockers must be ranked correctly
 
 ## 2. Latency vs Robustness
 
 ### Position
 
-For this use case, I would choose 90s P95 at 99% reliability over 30s at 90% reliability.
+I would choose **90s P95 at 99% reliability** over **30s at 90% reliability**.
 
-### Why
+### Rationale
 
-The brief says the contractor expects a structured proposal in their inbox in 1 hour. That means the product does not require sub-30-second real-time response for this workflow.
+This workflow does not need a real-time answer. The contractor expects a structured proposal workflow, not a chat response in a few seconds.
 
-A 30s system that silently fails or produces incomplete outputs 10% of the time is worse than a 90s system that reliably returns a traceable result, clear gaps, and a pricing-readiness decision.
+A fast system that silently produces incomplete or wrong scope 10% of the time is worse than a slower system that reliably returns:
 
-### Current implementation choice
+- extracted scope
+- provenance
+- confidence
+- missing fields
+- pricing readiness status
 
-The service is local-first and async-shaped. Each modality extractor can run independently:
+### Practical design choice
 
-- text
-- audio transcript
-- drawing
-- photos
+The current implementation supports this direction by saving intermediate extractor outputs:
 
-This naturally supports parallel execution later, but the current implementation prioritizes correctness and traceability over premature latency optimization.
+- text output
+- drawing output
+- vision outputs
+- final scope output
 
-### Production default
-
-My default would be:
-
-- run cheap/high-confidence extractors first
-- run image/model calls in parallel where possible
-- use timeouts per modality
-- preserve partial results
-- return a not-ready scope with clarifying questions instead of failing the whole job
-- escalate to human review when required evidence is missing
-
-### Failure posture
-
-If one provider is slow or unavailable, the system should not block forever. It should degrade into:
-
-- alternate provider if available and within cost ceiling
-- lower-confidence partial result
-- explicit gap
-- human review route
+That makes the pipeline easier to retry, inspect, and debug. If one modality fails, the system can still preserve partial evidence instead of losing the whole job.
 
 ## 3. Schema Strictness vs Evolvability
 
@@ -95,47 +70,37 @@ If one provider is slow or unavailable, the system should not block forever. It 
 
 I would keep the outer contract strict and the domain vocabulary moderately flexible.
 
-### What should be strict
+### Strict today
 
-The pricing engine needs reliable structure. These should be strict:
+These should be strict because downstream systems depend on them:
 
-- top-level `ScopeBrief` shape
+- `ScopeBrief` structure
+- task fields
+- material fields
 - provenance format
-- confidence bounds
-- task ordering
+- confidence range
 - gap severity
-- pricing-readiness criteria
-- source capture IDs
-- required task fields: name, category, point A, point B
+- pricing readiness
+- schema version
+- source capture references
 
-Strictness here prevents downstream consumers from receiving unpredictable data.
+This prevents malformed or ambiguous output from reaching pricing.
 
-### What should stay evolvable
+### Flexible today
 
-The construction vocabulary should not be over-constrained too early:
+These should remain more evolvable:
 
 - task categories
-- material names
-- fixture/component labels
-- observation labels
+- material/component vocabulary
+- fixture names
+- room/space labels
 - regulatory classifications
 - trade-specific terms
 
-The assignment explicitly introduces a second job type later: façade renovation on a Haussmannian building. That is a different regulatory and spatial model from a wine-bar shower installation. If the schema were too plumbing-specific, it would fail that migration.
+The reason is simple: a domain expert joining in three months may rewrite how components and transformations should be named. If the vocabulary is too rigid now, migration becomes expensive.
 
-### Current implementation choice
+### Rationale
 
-The schema uses typed core structures but leaves room for new task categories and observations. The current model supports this shower job while remaining adaptable to façade work.
+The schema should protect the business contract without pretending that the construction ontology is already final.
 
-### Why
-
-A domain expert may join later and revise the vocabulary. If we overfit the schema today, migration becomes expensive. If we make everything free-form, the pricing engine becomes unreliable.
-
-The right compromise is:
-
-- strict envelope
-- typed provenance/confidence
-- strict gap severity
-- controlled but extendable categories
-- versioned fields for mutable extracted values
-- migration notes whenever schema meaning changes
+For this assignment, I used a versioned schema and generic construction-aware fields instead of a shower-specific schema. That lets the system handle the current shower job while still leaving room for future cases like façade renovation, different trades, and improved domain vocabulary.

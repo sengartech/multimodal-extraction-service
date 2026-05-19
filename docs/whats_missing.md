@@ -1,3 +1,3 @@
-# What's Missing
+# What’s Missing
 
-TODO: Track missing features, open questions, and deferred assignment deliverables.
+The brief focuses on turning messy multimodal inputs into a structured scope, but it does not ask who ultimately owns the commercial truth of the output. On day 1, I would clarify where Donizo wants the boundary between AI extraction, contractor confirmation, pricing automation, and human review. For example: which fields are allowed to block pricing, which can be estimated with confidence bands, what mistakes are commercially unacceptable, and who signs off when the system is uncertain. That boundary matters more than model choice, because construction AI fails dangerously when it looks confident while hiding missing scope.
