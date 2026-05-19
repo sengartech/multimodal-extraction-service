@@ -1,0 +1,1025 @@
+{
+  "job_id": "wine_bar_staff_showers_001",
+  "schema_version": "0.1.0",
+  "source_captures": [
+    {
+      "capture_id": "text_note_001",
+      "capture_type": "contractor_note",
+      "modality": "text",
+      "path": "data/input/customer_text_fr.txt",
+      "description": "Original three-line French contractor text note.",
+      "language": "fr"
+    },
+    {
+      "capture_id": "drawing_floor_plan_001",
+      "capture_type": "floor_plan",
+      "modality": "drawing",
+      "path": "data/input/drawings/floor_plan.png",
+      "description": "Hand-drawn floor plan from customer brief.",
+      "language": null
+    },
+    {
+      "capture_id": "photo_001",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_01.png",
+      "description": "Existing-space photograph 1.",
+      "language": null
+    },
+    {
+      "capture_id": "photo_002",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_02.png",
+      "description": "Existing-space photograph 2.",
+      "language": null
+    },
+    {
+      "capture_id": "photo_003",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_03.png",
+      "description": "Existing-space photograph 3.",
+      "language": null
+    },
+    {
+      "capture_id": "photo_004",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_04.png",
+      "description": "Existing-space photograph 4.",
+      "language": null
+    },
+    {
+      "capture_id": "photo_005",
+      "capture_type": "site_photo",
+      "modality": "photo",
+      "path": "data/input/photos/photo_05.png",
+      "description": "Existing-space photograph 5.",
+      "language": null
+    },
+    {
+      "capture_id": "audio_mock_001",
+      "capture_type": "audio_recording",
+      "modality": "audio",
+      "path": "data/input/audios/mock_voice_note_fr.txt",
+      "description": "Synthetic French audio transcript used by MockTranscriber.",
+      "language": "fr"
+    }
+  ],
+  "title": {
+    "value": "Create two staff showers with partition wall, drainage access, and water heater installation",
+    "confidence": 0.84,
+    "provenance": [
+      {
+        "modality": "fusion",
+        "capture_id": "fusion",
+        "extractor": "fusion_engine_v1",
+        "confidence": 0.84,
+        "notes": null
+      }
+    ],
+    "history": []
+  },
+  "description": {
+    "value": "Requested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.",
+    "confidence": 0.84,
+    "provenance": [
+      {
+        "modality": "fusion",
+        "capture_id": "fusion",
+        "extractor": "fusion_engine_v1",
+        "confidence": 0.84,
+        "notes": null
+      }
+    ],
+    "history": []
+  },
+  "site_context": {
+    "value": "Existing interior room/corridor context appears constrained, with low ceiling/headroom, narrow circulation, mixed existing finishes, and stored contents/furnishings that may need removal or protection before works. Hand-drawn plan indicates a simple rectangular room with uncertain dimensions and opening configuration; likely ceiling height annotation is 2.60 m.",
+    "confidence": 0.84,
+    "provenance": [
+      {
+        "modality": "fusion",
+        "capture_id": "fusion",
+        "extractor": "fusion_engine_v1",
+        "confidence": 0.84,
+        "notes": null
+      }
+    ],
+    "history": []
+  },
+  "tasks": [
+    {
+      "task_id": "task_1",
+      "category": "plumbing",
+      "name": {
+        "value": "Create two shower installations",
+        "confidence": 0.89,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.89,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "changing room area",
+        "confidence": 0.89,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.89,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "two new showers",
+        "confidence": 0.89,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.89,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 1,
+      "confidence": 0.89,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.89,
+          "notes": null
+        },
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "supporting_evidence",
+          "confidence": 1.0,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_2",
+      "category": "walls",
+      "name": {
+        "value": "Build placo partition wall",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.95,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "shower/changing room area",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.95,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "new non-full-height partition wall at 2 m height",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.95,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 2,
+      "confidence": 0.95,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.95,
+          "notes": null
+        },
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "supporting_evidence",
+          "confidence": 1.0,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_3",
+      "category": "demolition",
+      "name": {
+        "value": "Open wall to access existing drainage",
+        "confidence": 0.9,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.9,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "existing wall",
+        "confidence": 0.9,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.9,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "100 mm drainage connection",
+        "confidence": 0.9,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.9,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 3,
+      "confidence": 0.9,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.9,
+          "notes": null
+        },
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "supporting_evidence",
+          "confidence": 1.0,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_4",
+      "category": "plumbing",
+      "name": {
+        "value": "Install and connect water heater",
+        "confidence": 0.94,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.94,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "water supply/services location",
+        "confidence": 0.94,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.94,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "water heater and connected plumbing",
+        "confidence": 0.94,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.94,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 4,
+      "confidence": 0.94,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.94,
+          "notes": null
+        },
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "supporting_evidence",
+          "confidence": 1.0,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_5",
+      "category": "general",
+      "name": {
+        "value": "Verify as-built layout, dimensions, openings, and service constraints on site before execution",
+        "confidence": 0.84,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.84,
+            "notes": null
+          },
+          {
+            "modality": "drawing",
+            "capture_id": "drawing_floor_plan_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          },
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          },
+          {
+            "modality": "photo",
+            "capture_id": "photo_002",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "entire work area including room perimeter and access points",
+        "confidence": 0.84,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.84,
+            "notes": null
+          },
+          {
+            "modality": "drawing",
+            "capture_id": "drawing_floor_plan_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          },
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          },
+          {
+            "modality": "photo",
+            "capture_id": "photo_002",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "confirmed installation layout and measurable quantities",
+        "confidence": 0.84,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.84,
+            "notes": null
+          },
+          {
+            "modality": "drawing",
+            "capture_id": "drawing_floor_plan_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          },
+          {
+            "modality": "photo",
+            "capture_id": "photo_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          },
+          {
+            "modality": "photo",
+            "capture_id": "photo_002",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 5,
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        },
+        {
+          "modality": "drawing",
+          "capture_id": "drawing_floor_plan_001",
+          "extractor": "supporting_evidence",
+          "confidence": 1.0,
+          "notes": null
+        },
+        {
+          "modality": "photo",
+          "capture_id": "photo_001",
+          "extractor": "supporting_evidence",
+          "confidence": 1.0,
+          "notes": null
+        },
+        {
+          "modality": "photo",
+          "capture_id": "photo_002",
+          "extractor": "supporting_evidence",
+          "confidence": 1.0,
+          "notes": null
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "material_id": "mat_1",
+      "name": {
+        "value": "placo partition wall system",
+        "confidence": 0.8,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.8,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 2.0,
+        "confidence": 0.8,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.8,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "m_height",
+      "related_task_ids": [
+        "task_2"
+      ]
+    },
+    {
+      "material_id": "mat_2",
+      "name": {
+        "value": "100 mm drainage connection components",
+        "confidence": 0.64,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.64,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 1.0,
+        "confidence": 0.64,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.64,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "allowance",
+      "related_task_ids": [
+        "task_1",
+        "task_3"
+      ]
+    },
+    {
+      "material_id": "mat_3",
+      "name": {
+        "value": "water heater",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.95,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 1.0,
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "fusion",
+            "capture_id": "fusion",
+            "extractor": "fusion_engine_v1",
+            "confidence": 0.95,
+            "notes": null
+          },
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "supporting_evidence",
+            "confidence": 1.0,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "unit",
+      "related_task_ids": [
+        "task_4"
+      ]
+    }
+  ],
+  "assumptions": [
+    {
+      "value": "Two showers are explicitly requested, but exact shower fixture specification and finish level are not defined.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "The new placo wall is confirmed as 2 m high and not full height; wall length and exact position remain unknown and must be measured on site.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "The scope relies on tying into an existing 100 mm drainage line reachable by opening an existing wall.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "Drawing evidence is treated as layout/context only because dimensions, opening count, and symbols are not reliable enough for takeoff without confirmation.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "Photos are treated as existing-condition context only and indicate pricing risks such as narrow access, low ceiling, mixed finishes, and occupied/cluttered conditions.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    }
+  ],
+  "exclusions": [
+    {
+      "value": "No specific shower fixtures, trays, screens, mixers, columns, or accessories are included unless later confirmed.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "No waterproofing system is included unless later confirmed.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "No floor or wall tiling scope is included unless later confirmed.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "No painting, taping, plastering, or finish reinstatement beyond explicitly confirmed wall opening/repair scope is included unless later confirmed.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "No electrical upgrade or new dedicated power supply for the water heater is included unless later confirmed.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "No removal, storage, or disposal of existing furniture, appliances, or contents is included unless later confirmed.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "No work is included based solely on photo-observed existing conditions such as exposed masonry, floor transitions, loose cables, or ceiling irregularities.",
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "fusion",
+          "capture_id": "fusion",
+          "extractor": "fusion_engine_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ],
+      "history": []
+    }
+  ],
+  "clarifying_questions": [
+    {
+      "question": "What is the required length and exact location of the new placo partition wall?",
+      "severity": "must_have",
+      "reason": "Only the wall height is given; wall length and placement are needed for pricing and execution.",
+      "related_task_ids": [
+        "task_2"
+      ],
+      "rank": 1
+    },
+    {
+      "question": "What shower fixtures and construction elements are included for the two showers, such as trays or floor form, mixers, shower columns, screens, and drain arrangement?",
+      "severity": "must_have",
+      "reason": "Two showers are requested, but fixture scope and build standard are missing for accurate pricing.",
+      "related_task_ids": [
+        "task_1"
+      ],
+      "rank": 2
+    },
+    {
+      "question": "Are waterproofing works for the shower area included in the scope?",
+      "severity": "must_have",
+      "reason": "Wet-area compliance and pricing depend on whether waterproofing is required.",
+      "related_task_ids": [
+        "task_1"
+      ],
+      "rank": 3
+    },
+    {
+      "question": "Is wall opening and reinstatement limited to accessing the existing 100 mm drainage, and what wall type/finish must be repaired afterward?",
+      "severity": "must_have",
+      "reason": "Demolition extent and making-good requirements directly affect labor, materials, and finish scope.",
+      "related_task_ids": [
+        "task_3"
+      ],
+      "rank": 4
+    },
+    {
+      "question": "What are the specifications of the water heater, including type, capacity, mounting location, and required electrical supply?",
+      "severity": "must_have",
+      "reason": "Water heater selection and installation conditions are required for accurate pricing and trade coordination.",
+      "related_task_ids": [
+        "task_4"
+      ],
+      "rank": 5
+    },
+    {
+      "question": "What are the confirmed room dimensions, units, and exact positions of existing openings/doors in the work area?",
+      "severity": "must_have",
+      "reason": "The sketch appears dimensioned but the values and opening interpretation are too uncertain for quantity takeoff and layout confirmation.",
+      "related_task_ids": [
+        "task_5"
+      ],
+      "rank": 6
+    },
+    {
+      "question": "Will the furniture, appliances, stored items, and other contents be removed before work starts?",
+      "severity": "must_have",
+      "reason": "Photos show cluttered and narrow existing conditions that can materially affect access, protection, and productivity.",
+      "related_task_ids": [
+        "task_5"
+      ],
+      "rank": 7
+    },
+    {
+      "question": "Are finishes for the new partition and repaired wall areas included, such as taping, plastering, painting, or tiling?",
+      "severity": "nice_to_have",
+      "reason": "The note mentions wall construction and opening but does not define final finish scope.",
+      "related_task_ids": [
+        "task_2",
+        "task_3"
+      ],
+      "rank": 8
+    },
+    {
+      "question": "Please confirm whether the noted ceiling height is 2.60 m clear height across the work area.",
+      "severity": "nice_to_have",
+      "reason": "Likely yes from the sketch, but confirmation helps method planning and quantity assumptions in a low-headroom area.",
+      "related_task_ids": [
+        "task_5"
+      ],
+      "rank": 9
+    }
+  ],
+  "unresolved_critical_conflicts": [],
+  "pricing_readiness": {
+    "pricing_ready": false,
+    "status": "not_ready",
+    "criteria": {
+      "title_exists": true,
+      "description_exists": true,
+      "has_tasks": true,
+      "no_must_have_questions": false,
+      "average_task_confidence_at_least_070": true,
+      "no_unresolved_critical_conflicts": true
+    },
+    "blocking_reasons": [
+      "must_have_clarifying_questions"
+    ],
+    "average_task_confidence": 0.9039999999999999
+  },
+  "ordered_task_ids": [
+    "task_1",
+    "task_2",
+    "task_3",
+    "task_4",
+    "task_5"
+  ]
+}
