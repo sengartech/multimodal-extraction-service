@@ -240,3 +240,8 @@ The pipeline uses LLMs where messy interpretation is useful, but code owns the c
 - Saved extractor outputs avoid rerunning expensive model calls during fusion/eval.
 
 For missing or uncertain pricing-critical inputs, the system should ask clarifying questions instead of hallucinating quantities or regulatory decisions.
+
+## Docs
+
+- All docs as per listed deliverables are in `docs` folder.
+- AI conversation history is also attached as docs and available in `docs/ai_conversation_history.md`.
