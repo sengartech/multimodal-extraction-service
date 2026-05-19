@@ -112,6 +112,21 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path where the final ScopeBrief JSON should be written.",
     )
     build_scope.set_defaults(handler=run_build_scope)
+    eval_scope = subparsers.add_parser(
+        "eval-scope",
+        help="Run deterministic assertions against a ScopeBrief JSON.",
+    )
+    eval_scope.add_argument(
+        "--scope",
+        default="data/output/scope_brief.json",
+        help="Path to ScopeBrief JSON.",
+    )
+    eval_scope.add_argument(
+        "--output",
+        default="data/output/eval_results.json",
+        help="Path where EvalReport JSON should be written.",
+    )
+    eval_scope.set_defaults(handler=run_eval_scope)
     return parser
 
 
@@ -269,7 +284,6 @@ def run_build_scope(args: argparse.Namespace, parser: argparse.ArgumentParser) -
 
 
 def load_extractor_result(path: Path) -> "ExtractorResult":
-    
     with path.open("r", encoding="utf-8") as file:
         data = json.load(file)
     return ExtractorResult.model_validate(data)
@@ -277,6 +291,31 @@ def load_extractor_result(path: Path) -> "ExtractorResult":
 
 def load_extractor_results(paths: list[Path]) -> list["ExtractorResult"]:
     return [load_extractor_result(path) for path in paths]
+
+
+def run_eval_scope(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    from scope_modeler.eval.harness import evaluate_scope
+    from scope_modeler.models import ScopeBrief
+
+    scope_path = Path(args.scope)
+    if not scope_path.exists():
+        parser.error(f"ScopeBrief file not found: {scope_path}")
+    with scope_path.open("r", encoding="utf-8") as file:
+        scope_data = json.load(file)
+    scope_data.pop("ordered_task_ids", None)
+    scope = ScopeBrief.model_validate(scope_data)
+    report = evaluate_scope(scope, str(scope_path))
+    output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(report.model_dump(mode="json"), indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(
+        f"Eval precision={report.overall_precision:.2f} recall={report.overall_recall:.2f} "
+        f"passed={report.passed} failed={report.failed} partial={report.partial}"
+    )
+    return 0
 
 
 def load_env() -> None:

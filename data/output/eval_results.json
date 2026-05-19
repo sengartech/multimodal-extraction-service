@@ -1,0 +1,205 @@
+{
+  "scope_path": "data/output/scope_brief.json",
+  "total_assertions": 16,
+  "passed": 16,
+  "failed": 0,
+  "partial": 0,
+  "overall_precision": 1.0,
+  "overall_recall": 1.0,
+  "field_type_metrics": [
+    {
+      "field_type": "clarifying_questions",
+      "total_assertions": 3,
+      "passed": 3,
+      "failed": 0,
+      "partial": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "field_type": "materials",
+      "total_assertions": 2,
+      "passed": 2,
+      "failed": 0,
+      "partial": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "field_type": "measurements",
+      "total_assertions": 2,
+      "passed": 2,
+      "failed": 0,
+      "partial": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "field_type": "pricing_readiness",
+      "total_assertions": 1,
+      "passed": 1,
+      "failed": 0,
+      "partial": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "field_type": "regulatory",
+      "total_assertions": 1,
+      "passed": 1,
+      "failed": 0,
+      "partial": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "field_type": "safety",
+      "total_assertions": 1,
+      "passed": 1,
+      "failed": 0,
+      "partial": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "field_type": "tasks",
+      "total_assertions": 6,
+      "passed": 6,
+      "failed": 0,
+      "partial": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "assertion_results": [
+    {
+      "assertion_id": "task_shower_installation",
+      "field_type": "tasks",
+      "status": "pass",
+      "expected": "Scope includes installing/creating two staff showers.",
+      "actual": "Create two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities",
+      "notes": "Matched terms: ['shower', 'two']"
+    },
+    {
+      "assertion_id": "task_placo_partition",
+      "field_type": "tasks",
+      "status": "pass",
+      "expected": "Scope includes placo partition wall work.",
+      "actual": "Requested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities\nplaco partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit",
+      "notes": "Matched terms: ['placo', 'partition']"
+    },
+    {
+      "assertion_id": "measurement_wall_height_2m",
+      "field_type": "measurements",
+      "status": "pass",
+      "expected": "Scope preserves 2 m wall height.",
+      "actual": "Requested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities\nplaco partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit\nTwo showers are explicitly requested, but exact shower fixture specification and finish level are not defined.\nThe new placo wall is confirmed as 2 m high and not full height; wall length and exact position remain unknown and must be measured on site.\nThe scope relies on tying into an existing 100 mm drainage line reachable by opening an existing wall.\nDrawing evidence is treated as layout/context only because dimensions, opening count, and symbols are not reliable enough for takeoff without confirmation.\nPhotos are treated as existing-condition context only and indicate pricing risks such as narrow access, low ceiling, mixed finishes, and occupied/cluttered conditions.",
+      "notes": "Matched terms: ['2', 'm']"
+    },
+    {
+      "assertion_id": "signal_non_full_height_wall",
+      "field_type": "tasks",
+      "status": "pass",
+      "expected": "Scope notes wall is not full height.",
+      "actual": "Requested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities\nTwo showers are explicitly requested, but exact shower fixture specification and finish level are not defined.\nThe new placo wall is confirmed as 2 m high and not full height; wall length and exact position remain unknown and must be measured on site.\nThe scope relies on tying into an existing 100 mm drainage line reachable by opening an existing wall.\nDrawing evidence is treated as layout/context only because dimensions, opening count, and symbols are not reliable enough for takeoff without confirmation.\nPhotos are treated as existing-condition context only and indicate pricing risks such as narrow access, low ceiling, mixed finishes, and occupied/cluttered conditions.",
+      "notes": "Matched terms: ['non-full-height']"
+    },
+    {
+      "assertion_id": "task_wall_opening",
+      "field_type": "tasks",
+      "status": "pass",
+      "expected": "Scope includes opening an existing wall.",
+      "actual": "Requested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities",
+      "notes": "Matched terms: ['opening', 'wall']"
+    },
+    {
+      "assertion_id": "measurement_drainage_100mm",
+      "field_type": "measurements",
+      "status": "pass",
+      "expected": "Scope preserves 100 mm drainage requirement.",
+      "actual": "Requested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities\nplaco partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit\nmust_have What is the required length and exact location of the new placo partition wall? Only the wall height is given; wall length and placement are needed for pricing and execution.\nmust_have What shower fixtures and construction elements are included for the two showers, such as trays or floor form, mixers, shower columns, screens, and drain arrangement? Two showers are requested, but fixture scope and build standard are missing for accurate pricing.\nmust_have Are waterproofing works for the shower area included in the scope? Wet-area compliance and pricing depend on whether waterproofing is required.\nmust_have Is wall opening and reinstatement limited to accessing the existing 100 mm drainage, and what wall type/finish must be repaired afterward? Demolition extent and making-good requirements directly affect labor, materials, and finish scope.\nmust_have What are the specifications of the water heater, including type, capacity, mounting location, and required electrical supply? Water heater selection and installation conditions are required for accurate pricing and trade coordination.\nmust_have What are the confirmed room dimensions, units, and exact positions of existing openings/doors in the work area? The sketch appears dimensioned but the values and opening interpretation are too uncertain for quantity takeoff and layout confirmation.\nmust_have Will the furniture, appliances, stored items, and other contents be removed before work starts? Photos show cluttered and narrow existing conditions that can materially affect access, protection, and productivity.\nnice_to_have Are finishes for the new partition and repaired wall areas included, such as taping, plastering, painting, or tiling? The note mentions wall construction and opening but does not define final finish scope.\nnice_to_have Please confirm whether the noted ceiling height is 2.60 m clear height across the work area. Likely yes from the sketch, but confirmation helps method planning and quantity assumptions in a low-headroom area.",
+      "notes": "Matched terms: ['100', 'drainage']"
+    },
+    {
+      "assertion_id": "task_water_heater",
+      "field_type": "tasks",
+      "status": "pass",
+      "expected": "Scope includes water heater installation or connection.",
+      "actual": "Requested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities\nplaco partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit\nmust_have What is the required length and exact location of the new placo partition wall? Only the wall height is given; wall length and placement are needed for pricing and execution.\nmust_have What shower fixtures and construction elements are included for the two showers, such as trays or floor form, mixers, shower columns, screens, and drain arrangement? Two showers are requested, but fixture scope and build standard are missing for accurate pricing.\nmust_have Are waterproofing works for the shower area included in the scope? Wet-area compliance and pricing depend on whether waterproofing is required.\nmust_have Is wall opening and reinstatement limited to accessing the existing 100 mm drainage, and what wall type/finish must be repaired afterward? Demolition extent and making-good requirements directly affect labor, materials, and finish scope.\nmust_have What are the specifications of the water heater, including type, capacity, mounting location, and required electrical supply? Water heater selection and installation conditions are required for accurate pricing and trade coordination.\nmust_have What are the confirmed room dimensions, units, and exact positions of existing openings/doors in the work area? The sketch appears dimensioned but the values and opening interpretation are too uncertain for quantity takeoff and layout confirmation.\nmust_have Will the furniture, appliances, stored items, and other contents be removed before work starts? Photos show cluttered and narrow existing conditions that can materially affect access, protection, and productivity.\nnice_to_have Are finishes for the new partition and repaired wall areas included, such as taping, plastering, painting, or tiling? The note mentions wall construction and opening but does not define final finish scope.\nnice_to_have Please confirm whether the noted ceiling height is 2.60 m clear height across the work area. Likely yes from the sketch, but confirmation helps method planning and quantity assumptions in a low-headroom area.",
+      "notes": "Matched terms: ['water heater']"
+    },
+    {
+      "assertion_id": "material_placo_partition",
+      "field_type": "materials",
+      "status": "pass",
+      "expected": "Materials include placo or partition material.",
+      "actual": "placo partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit\nRequested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities",
+      "notes": "Matched terms: ['placo']"
+    },
+    {
+      "assertion_id": "material_water_heater",
+      "field_type": "materials",
+      "status": "pass",
+      "expected": "Materials include water heater.",
+      "actual": "placo partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit\nRequested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities",
+      "notes": "Matched terms: ['water heater']"
+    },
+    {
+      "assertion_id": "question_wall_location",
+      "field_type": "clarifying_questions",
+      "status": "pass",
+      "expected": "Clarify wall length or location.",
+      "actual": "must_have What is the required length and exact location of the new placo partition wall? Only the wall height is given; wall length and placement are needed for pricing and execution.\nmust_have What shower fixtures and construction elements are included for the two showers, such as trays or floor form, mixers, shower columns, screens, and drain arrangement? Two showers are requested, but fixture scope and build standard are missing for accurate pricing.\nmust_have Are waterproofing works for the shower area included in the scope? Wet-area compliance and pricing depend on whether waterproofing is required.\nmust_have Is wall opening and reinstatement limited to accessing the existing 100 mm drainage, and what wall type/finish must be repaired afterward? Demolition extent and making-good requirements directly affect labor, materials, and finish scope.\nmust_have What are the specifications of the water heater, including type, capacity, mounting location, and required electrical supply? Water heater selection and installation conditions are required for accurate pricing and trade coordination.\nmust_have What are the confirmed room dimensions, units, and exact positions of existing openings/doors in the work area? The sketch appears dimensioned but the values and opening interpretation are too uncertain for quantity takeoff and layout confirmation.\nmust_have Will the furniture, appliances, stored items, and other contents be removed before work starts? Photos show cluttered and narrow existing conditions that can materially affect access, protection, and productivity.\nnice_to_have Are finishes for the new partition and repaired wall areas included, such as taping, plastering, painting, or tiling? The note mentions wall construction and opening but does not define final finish scope.\nnice_to_have Please confirm whether the noted ceiling height is 2.60 m clear height across the work area. Likely yes from the sketch, but confirmation helps method planning and quantity assumptions in a low-headroom area.",
+      "notes": "Matched terms: ['wall', 'location']"
+    },
+    {
+      "assertion_id": "question_waterproofing",
+      "field_type": "clarifying_questions",
+      "status": "pass",
+      "expected": "Clarify shower fixtures or waterproofing.",
+      "actual": "must_have What is the required length and exact location of the new placo partition wall? Only the wall height is given; wall length and placement are needed for pricing and execution.\nmust_have What shower fixtures and construction elements are included for the two showers, such as trays or floor form, mixers, shower columns, screens, and drain arrangement? Two showers are requested, but fixture scope and build standard are missing for accurate pricing.\nmust_have Are waterproofing works for the shower area included in the scope? Wet-area compliance and pricing depend on whether waterproofing is required.\nmust_have Is wall opening and reinstatement limited to accessing the existing 100 mm drainage, and what wall type/finish must be repaired afterward? Demolition extent and making-good requirements directly affect labor, materials, and finish scope.\nmust_have What are the specifications of the water heater, including type, capacity, mounting location, and required electrical supply? Water heater selection and installation conditions are required for accurate pricing and trade coordination.\nmust_have What are the confirmed room dimensions, units, and exact positions of existing openings/doors in the work area? The sketch appears dimensioned but the values and opening interpretation are too uncertain for quantity takeoff and layout confirmation.\nmust_have Will the furniture, appliances, stored items, and other contents be removed before work starts? Photos show cluttered and narrow existing conditions that can materially affect access, protection, and productivity.\nnice_to_have Are finishes for the new partition and repaired wall areas included, such as taping, plastering, painting, or tiling? The note mentions wall construction and opening but does not define final finish scope.\nnice_to_have Please confirm whether the noted ceiling height is 2.60 m clear height across the work area. Likely yes from the sketch, but confirmation helps method planning and quantity assumptions in a low-headroom area.",
+      "notes": "Matched terms: ['waterproofing']"
+    },
+    {
+      "assertion_id": "question_water_heater",
+      "field_type": "clarifying_questions",
+      "status": "pass",
+      "expected": "Clarify water heater capacity or electrical requirements.",
+      "actual": "must_have What is the required length and exact location of the new placo partition wall? Only the wall height is given; wall length and placement are needed for pricing and execution.\nmust_have What shower fixtures and construction elements are included for the two showers, such as trays or floor form, mixers, shower columns, screens, and drain arrangement? Two showers are requested, but fixture scope and build standard are missing for accurate pricing.\nmust_have Are waterproofing works for the shower area included in the scope? Wet-area compliance and pricing depend on whether waterproofing is required.\nmust_have Is wall opening and reinstatement limited to accessing the existing 100 mm drainage, and what wall type/finish must be repaired afterward? Demolition extent and making-good requirements directly affect labor, materials, and finish scope.\nmust_have What are the specifications of the water heater, including type, capacity, mounting location, and required electrical supply? Water heater selection and installation conditions are required for accurate pricing and trade coordination.\nmust_have What are the confirmed room dimensions, units, and exact positions of existing openings/doors in the work area? The sketch appears dimensioned but the values and opening interpretation are too uncertain for quantity takeoff and layout confirmation.\nmust_have Will the furniture, appliances, stored items, and other contents be removed before work starts? Photos show cluttered and narrow existing conditions that can materially affect access, protection, and productivity.\nnice_to_have Are finishes for the new partition and repaired wall areas included, such as taping, plastering, painting, or tiling? The note mentions wall construction and opening but does not define final finish scope.\nnice_to_have Please confirm whether the noted ceiling height is 2.60 m clear height across the work area. Likely yes from the sketch, but confirmation helps method planning and quantity assumptions in a low-headroom area.",
+      "notes": "Matched terms: ['water heater', 'capacity']"
+    },
+    {
+      "assertion_id": "pricing_not_ready",
+      "field_type": "pricing_readiness",
+      "status": "pass",
+      "expected": "pricing_ready is false because blockers remain.",
+      "actual": "pricing_ready false",
+      "notes": "Matched terms: ['pricing_ready false']"
+    },
+    {
+      "assertion_id": "no_photo_only_task",
+      "field_type": "tasks",
+      "status": "pass",
+      "expected": "Photo-only existing context does not become requested work.",
+      "actual": "Create two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities",
+      "notes": null
+    },
+    {
+      "assertion_id": "unsupported_floor_area_not_claimed",
+      "field_type": "safety",
+      "status": "pass",
+      "expected": "Scope should not claim floor_area_m2 because reliable dimensions are unavailable.",
+      "actual": "Create two staff showers with partition wall, drainage access, and water heater installation\nRequested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities\nplaco partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit\nTwo showers are explicitly requested, but exact shower fixture specification and finish level are not defined.\nThe new placo wall is confirmed as 2 m high and not full height; wall length and exact position remain unknown and must be measured on site.\nThe scope relies on tying into an existing 100 mm drainage line reachable by opening an existing wall.\nDrawing evidence is treated as layout/context only because dimensions, opening count, and symbols are not reliable enough for takeoff without confirmation.\nPhotos are treated as existing-condition context only and indicate pricing risks such as narrow access, low ceiling, mixed finishes, and occupied/cluttered conditions.",
+      "notes": null
+    },
+    {
+      "assertion_id": "unsupported_tva_not_claimed",
+      "field_type": "regulatory",
+      "status": "pass",
+      "expected": "Scope should not assign TVA category because job/regulatory context is insufficient.",
+      "actual": "Create two staff showers with partition wall, drainage access, and water heater installation\nRequested scope from contractor note is to create two showers in the changing/locker room area, build a 2 m high non-full-height placo partition wall, open an existing wall to access a 100 mm drainage connection, and install/connect a water heater. Drawing and photos provide context on layout uncertainty, low headroom, narrow access, and existing occupied conditions, but do not by themselves define additional requested work.\nCreate two shower installations changing room area two new showers\nBuild placo partition wall shower/changing room area new non-full-height partition wall at 2 m height\nOpen wall to access existing drainage existing wall 100 mm drainage connection\nInstall and connect water heater water supply/services location water heater and connected plumbing\nVerify as-built layout, dimensions, openings, and service constraints on site before execution entire work area including room perimeter and access points confirmed installation layout and measurable quantities\nplaco partition wall system 2.0 m_height\n100 mm drainage connection components 1.0 allowance\nwater heater 1.0 unit\nTwo showers are explicitly requested, but exact shower fixture specification and finish level are not defined.\nThe new placo wall is confirmed as 2 m high and not full height; wall length and exact position remain unknown and must be measured on site.\nThe scope relies on tying into an existing 100 mm drainage line reachable by opening an existing wall.\nDrawing evidence is treated as layout/context only because dimensions, opening count, and symbols are not reliable enough for takeoff without confirmation.\nPhotos are treated as existing-condition context only and indicate pricing risks such as narrow access, low ceiling, mixed finishes, and occupied/cluttered conditions.",
+      "notes": null
+    }
+  ],
+  "notes": "Precision is assertion-level precision, not corpus-level extraction precision. Matching is deterministic case-insensitive substring matching."
+}
