@@ -4,6 +4,7 @@ from scope_modeler.extractors import (
     DraftTask,
     ExtractorResult,
     LLMTextExtractor,
+    OpenAITextExtractionResponse,
     TextExtractionDraft,
 )
 from scope_modeler.inputs import load_manifest
@@ -112,3 +113,24 @@ def test_llm_text_extractor_maps_fixture_text_to_extractor_result():
     assert result.candidate_tasks[0].name.provenance[0].capture_id == "text_note_001"
     assert len(client.calls) == 1
     assert client.real_api_calls == 0
+
+
+def test_openai_text_response_converts_to_text_extraction_draft():
+    response = OpenAITextExtractionResponse(
+        observations=[
+            DraftObservation(label="requested_work", value="Créer deux douches", confidence=0.9)
+        ],
+        tasks=[],
+        materials=[],
+        assumptions=[],
+        clarifying_questions=[],
+        confidence=0.88,
+    )
+
+    draft = TextExtractionDraft(
+        **response.model_dump(mode="python"),
+        raw_output={"provider": "openai", "model": "gpt-5.4"},
+    )
+
+    assert draft.observations[0].label == "requested_work"
+    assert draft.raw_output["provider"] == "openai"

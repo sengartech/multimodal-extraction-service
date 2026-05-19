@@ -40,6 +40,46 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path where the extracted JSON result should be written.",
     )
     extract_vision.set_defaults(handler=run_extract_vision)
+    extract_text = subparsers.add_parser(
+        "extract-text",
+        help="Run OpenAI-backed text extraction for one text capture.",
+    )
+    extract_text.add_argument(
+        "--manifest",
+        default="data/input/manifest.json",
+        help="Path to the input manifest.",
+    )
+    extract_text.add_argument(
+        "--capture-id",
+        required=True,
+        help="Text capture ID to extract.",
+    )
+    extract_text.add_argument(
+        "--output",
+        required=True,
+        help="Path where the extracted JSON result should be written.",
+    )
+    extract_text.set_defaults(handler=run_extract_text)
+    extract_drawing = subparsers.add_parser(
+        "extract-drawing",
+        help="Run OpenAI-backed two-pass drawing extraction for one drawing capture.",
+    )
+    extract_drawing.add_argument(
+        "--manifest",
+        default="data/input/manifest.json",
+        help="Path to the input manifest.",
+    )
+    extract_drawing.add_argument(
+        "--capture-id",
+        required=True,
+        help="Drawing capture ID to extract.",
+    )
+    extract_drawing.add_argument(
+        "--output",
+        required=True,
+        help="Path where the extracted JSON result should be written.",
+    )
+    extract_drawing.set_defaults(handler=run_extract_drawing)
     return parser
 
 
@@ -77,4 +117,67 @@ def run_extract_vision(args: argparse.Namespace, parser: argparse.ArgumentParser
         json.dumps(result.model_dump(mode="json"), indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+    return 0
+
+
+def run_extract_text(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    from dotenv import load_dotenv
+
+    from scope_modeler.extractors import LLMTextExtractor, OpenAITextModelClient
+    from scope_modeler.inputs import load_manifest
+    from scope_modeler.models import Modality
+
+    load_dotenv()
+    manifest = load_manifest(args.manifest)
+    capture = manifest.get_capture(args.capture_id)
+    if capture is None:
+        parser.error(f"Capture not found in manifest: {args.capture_id}")
+    if capture.modality != Modality.TEXT:
+        parser.error(
+            f"Capture {args.capture_id} has modality {capture.modality}; extract-text requires text."
+        )
+
+    result = LLMTextExtractor(OpenAITextModelClient()).extract(capture)
+    output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(result.model_dump(mode="json"), indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"Wrote text extraction result to {output_path}")
+    return 0
+
+
+def run_extract_drawing(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    from dotenv import load_dotenv
+
+    from scope_modeler.extractors import (
+        OpenAIDrawingGeometryClient,
+        OpenAIDrawingSemanticClient,
+        OpenAITwoPassDrawingParser,
+    )
+    from scope_modeler.inputs import load_manifest
+    from scope_modeler.models import Modality
+
+    load_dotenv()
+    manifest = load_manifest(args.manifest)
+    capture = manifest.get_capture(args.capture_id)
+    if capture is None:
+        parser.error(f"Capture not found in manifest: {args.capture_id}")
+    if capture.modality != Modality.DRAWING:
+        parser.error(
+            f"Capture {args.capture_id} has modality {capture.modality}; extract-drawing requires drawing."
+        )
+
+    result = OpenAITwoPassDrawingParser(
+        geometry_client=OpenAIDrawingGeometryClient(),
+        semantic_client=OpenAIDrawingSemanticClient(),
+    ).extract(capture)
+    output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(result.model_dump(mode="json"), indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"Wrote drawing extraction result to {output_path}")
     return 0

@@ -1,0 +1,699 @@
+{
+  "capture_id": "text_note_001",
+  "extractor_name": "llm_text_extractor_v1",
+  "modality": "text",
+  "observations": [
+    {
+      "label": "nombre_douches_vestiaires",
+      "value": 2,
+      "confidence": 0.98,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.98,
+        "notes": null
+      },
+      "notes": "Création de deux douches dans des vestiaires."
+    },
+    {
+      "label": "mur_placo_hauteur",
+      "value": "2 mètres",
+      "confidence": 0.97,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.97,
+        "notes": null
+      },
+      "notes": "Mur en placo prévu en hauteur partielle."
+    },
+    {
+      "label": "mur_pas_pleine_hauteur",
+      "value": true,
+      "confidence": 0.99,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.99,
+        "notes": null
+      },
+      "notes": "Le mur n'est pas prévu jusqu'au plafond."
+    },
+    {
+      "label": "evacuation_cible",
+      "value": "évacuation 100",
+      "confidence": 0.94,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.94,
+        "notes": null
+      },
+      "notes": "Ouverture de mur pour récupérer une évacuation de diamètre/type 100 mentionnée dans la note."
+    },
+    {
+      "label": "installation_chauffe_eau_prevue",
+      "value": true,
+      "confidence": 0.98,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.98,
+        "notes": null
+      },
+      "notes": "Installation et raccordement d'un chauffe-eau prévus."
+    }
+  ],
+  "candidate_tasks": [
+    {
+      "task_id": "T1",
+      "category": "plumbing",
+      "name": {
+        "value": "Créer 2 douches vestiaires",
+        "confidence": 0.83,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.83,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "zone vestiaires",
+        "confidence": 0.83,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.83,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "2 douches à réaliser",
+        "confidence": 0.83,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.83,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 1,
+      "confidence": 0.83,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.83,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "T2",
+      "category": "walls",
+      "name": {
+        "value": "Monter un mur en placo non pleine hauteur",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "zone des douches/vestiaires",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "mur en placo de 2 m de haut",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 2,
+      "confidence": 0.95,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.95,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "T3",
+      "category": "demolition",
+      "name": {
+        "value": "Ouvrir le mur pour récupérer l'évacuation 100",
+        "confidence": 0.93,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.93,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "mur existant",
+        "confidence": 0.93,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.93,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "raccordement à l'évacuation 100",
+        "confidence": 0.93,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.93,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 3,
+      "confidence": 0.93,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.93,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "T4",
+      "category": "plumbing",
+      "name": {
+        "value": "Installer le chauffe-eau et effectuer le raccordement",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "emplacement chauffe-eau",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "réseaux de plomberie/évacuation nécessaires",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 4,
+      "confidence": 0.95,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.95,
+          "notes": null
+        }
+      ]
+    }
+  ],
+  "candidate_materials": [
+    {
+      "material_id": "M1",
+      "name": {
+        "value": "placo",
+        "confidence": 0.8,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.8,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 1.0,
+        "confidence": 0.8,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.8,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "mur",
+      "related_task_ids": [
+        "T2"
+      ]
+    },
+    {
+      "material_id": "M2",
+      "name": {
+        "value": "chauffe-eau",
+        "confidence": 0.96,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.96,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 1.0,
+        "confidence": 0.96,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.96,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "unité",
+      "related_task_ids": [
+        "T4"
+      ]
+    },
+    {
+      "material_id": "M3",
+      "name": {
+        "value": "raccords plomberie",
+        "confidence": 0.61,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.61,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 1.0,
+        "confidence": 0.61,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.61,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "lot",
+      "related_task_ids": [
+        "T1",
+        "T3",
+        "T4"
+      ]
+    }
+  ],
+  "assumptions": [],
+  "clarifying_questions": [
+    {
+      "question": "Quelle est la longueur du mur en placo de 2 m de haut et son implantation exacte ?",
+      "severity": "must_have",
+      "reason": "Indispensable pour chiffrer les matériaux, l'ossature, les finitions et la main-d'œuvre du mur non pleine hauteur.",
+      "related_task_ids": [
+        "T2"
+      ],
+      "rank": 1
+    },
+    {
+      "question": "Quels équipements sont inclus pour les 2 douches : receveurs, robinetteries, colonnes, parois, siphons et revêtements ?",
+      "severity": "must_have",
+      "reason": "Le niveau d'équipement des douches impacte fortement le prix et le périmètre plomberie/finition.",
+      "related_task_ids": [
+        "T1"
+      ],
+      "rank": 2
+    },
+    {
+      "question": "Les alimentations en eau chaude/eau froide pour les 2 douches existent-elles déjà ou sont-elles à créer ?",
+      "severity": "must_have",
+      "reason": "Conditionne l'étendue des travaux de plomberie et le chiffrage.",
+      "related_task_ids": [
+        "T1",
+        "T4"
+      ],
+      "rank": 3
+    },
+    {
+      "question": "Quel est le type de chauffe-eau à installer (électrique, thermodynamique, autre), sa capacité et son emplacement ?",
+      "severity": "must_have",
+      "reason": "Informations nécessaires pour fournir le matériel, prévoir les raccordements et établir un prix.",
+      "related_task_ids": [
+        "T4"
+      ],
+      "rank": 4
+    },
+    {
+      "question": "Le raccordement du chauffe-eau comprend-il aussi l'alimentation électrique et les protections nécessaires ?",
+      "severity": "must_have",
+      "reason": "Le texte mentionne un raccordement sans préciser si le lot électrique est inclus.",
+      "related_task_ids": [
+        "T4"
+      ],
+      "rank": 5
+    },
+    {
+      "question": "L'ouverture de mur inclut-elle la reprise/fermeture du mur après passage et les finitions ?",
+      "severity": "must_have",
+      "reason": "La remise en état après ouverture influence le chiffrage démolition et finitions.",
+      "related_task_ids": [
+        "T3"
+      ],
+      "rank": 6
+    },
+    {
+      "question": "Le diamètre '100' de l'évacuation correspond-il bien à une évacuation existante exploitable pour les 2 douches, et à quelle distance se trouve-t-elle ?",
+      "severity": "must_have",
+      "reason": "La faisabilité et la quantité de réseau à créer dépendent de la position de l'évacuation 100.",
+      "related_task_ids": [
+        "T1",
+        "T3"
+      ],
+      "rank": 7
+    }
+  ],
+  "confidence": 0.9,
+  "raw_output": {
+    "model_raw_output": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "normalized_draft": {
+      "observations": [
+        {
+          "label": "nombre_douches_vestiaires",
+          "value": 2,
+          "confidence": 0.98,
+          "notes": "Création de deux douches dans des vestiaires.",
+          "evidence_quote": "Création de 2 douches vestiaires"
+        },
+        {
+          "label": "mur_placo_hauteur",
+          "value": "2 mètres",
+          "confidence": 0.97,
+          "notes": "Mur en placo prévu en hauteur partielle.",
+          "evidence_quote": "monter un mur en placo de 2 mètres de haut"
+        },
+        {
+          "label": "mur_pas_pleine_hauteur",
+          "value": true,
+          "confidence": 0.99,
+          "notes": "Le mur n'est pas prévu jusqu'au plafond.",
+          "evidence_quote": "(pas pleine hauteur)"
+        },
+        {
+          "label": "evacuation_cible",
+          "value": "évacuation 100",
+          "confidence": 0.94,
+          "notes": "Ouverture de mur pour récupérer une évacuation de diamètre/type 100 mentionnée dans la note.",
+          "evidence_quote": "Ouverture mur pour aller récupérer évacuation 100"
+        },
+        {
+          "label": "installation_chauffe_eau_prevue",
+          "value": true,
+          "confidence": 0.98,
+          "notes": "Installation et raccordement d'un chauffe-eau prévus.",
+          "evidence_quote": "Installation chauffe eau et raccordement"
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T1",
+          "category": "plumbing",
+          "name": "Créer 2 douches vestiaires",
+          "point_a": "zone vestiaires",
+          "point_b": "2 douches à réaliser",
+          "step_number": 1,
+          "confidence": 0.83
+        },
+        {
+          "task_id": "T2",
+          "category": "walls",
+          "name": "Monter un mur en placo non pleine hauteur",
+          "point_a": "zone des douches/vestiaires",
+          "point_b": "mur en placo de 2 m de haut",
+          "step_number": 2,
+          "confidence": 0.95
+        },
+        {
+          "task_id": "T3",
+          "category": "demolition",
+          "name": "Ouvrir le mur pour récupérer l'évacuation 100",
+          "point_a": "mur existant",
+          "point_b": "raccordement à l'évacuation 100",
+          "step_number": 3,
+          "confidence": 0.93
+        },
+        {
+          "task_id": "T4",
+          "category": "plumbing",
+          "name": "Installer le chauffe-eau et effectuer le raccordement",
+          "point_a": "emplacement chauffe-eau",
+          "point_b": "réseaux de plomberie/évacuation nécessaires",
+          "step_number": 4,
+          "confidence": 0.95
+        }
+      ],
+      "materials": [
+        {
+          "material_id": "M1",
+          "name": "placo",
+          "estimated_quantity": 1.0,
+          "unit": "mur",
+          "related_task_ids": [
+            "T2"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "material_id": "M2",
+          "name": "chauffe-eau",
+          "estimated_quantity": 1.0,
+          "unit": "unité",
+          "related_task_ids": [
+            "T4"
+          ],
+          "confidence": 0.96
+        },
+        {
+          "material_id": "M3",
+          "name": "raccords plomberie",
+          "estimated_quantity": 1.0,
+          "unit": "lot",
+          "related_task_ids": [
+            "T1",
+            "T3",
+            "T4"
+          ],
+          "confidence": 0.61
+        }
+      ],
+      "assumptions": [
+        {
+          "label": "mur_placo_longueur_non_precisee",
+          "value": null,
+          "confidence": 0.9,
+          "notes": "La hauteur du mur est donnée, mais pas sa longueur ni son implantation exacte.",
+          "evidence_quote": "monter un mur en placo de 2 mètres de haut"
+        },
+        {
+          "label": "details_douches_non_precises",
+          "value": null,
+          "confidence": 0.87,
+          "notes": "Les receveurs, robinetteries, parois et alimentations exactes des 2 douches ne sont pas décrits.",
+          "evidence_quote": "Création de 2 douches vestiaires"
+        },
+        {
+          "label": "caracteristiques_chauffe_eau_non_precisees",
+          "value": null,
+          "confidence": 0.92,
+          "notes": "Le type, la capacité, l'énergie et l'emplacement du chauffe-eau ne sont pas indiqués.",
+          "evidence_quote": "Installation chauffe eau et raccordement"
+        }
+      ],
+      "clarifying_questions": [
+        {
+          "question": "Quelle est la longueur du mur en placo de 2 m de haut et son implantation exacte ?",
+          "severity": "must_have",
+          "reason": "Indispensable pour chiffrer les matériaux, l'ossature, les finitions et la main-d'œuvre du mur non pleine hauteur.",
+          "related_task_ids": [
+            "T2"
+          ],
+          "rank": 1,
+          "confidence": 0.97
+        },
+        {
+          "question": "Quels équipements sont inclus pour les 2 douches : receveurs, robinetteries, colonnes, parois, siphons et revêtements ?",
+          "severity": "must_have",
+          "reason": "Le niveau d'équipement des douches impacte fortement le prix et le périmètre plomberie/finition.",
+          "related_task_ids": [
+            "T1"
+          ],
+          "rank": 2,
+          "confidence": 0.96
+        },
+        {
+          "question": "Les alimentations en eau chaude/eau froide pour les 2 douches existent-elles déjà ou sont-elles à créer ?",
+          "severity": "must_have",
+          "reason": "Conditionne l'étendue des travaux de plomberie et le chiffrage.",
+          "related_task_ids": [
+            "T1",
+            "T4"
+          ],
+          "rank": 3,
+          "confidence": 0.93
+        },
+        {
+          "question": "Quel est le type de chauffe-eau à installer (électrique, thermodynamique, autre), sa capacité et son emplacement ?",
+          "severity": "must_have",
+          "reason": "Informations nécessaires pour fournir le matériel, prévoir les raccordements et établir un prix.",
+          "related_task_ids": [
+            "T4"
+          ],
+          "rank": 4,
+          "confidence": 0.98
+        },
+        {
+          "question": "Le raccordement du chauffe-eau comprend-il aussi l'alimentation électrique et les protections nécessaires ?",
+          "severity": "must_have",
+          "reason": "Le texte mentionne un raccordement sans préciser si le lot électrique est inclus.",
+          "related_task_ids": [
+            "T4"
+          ],
+          "rank": 5,
+          "confidence": 0.91
+        },
+        {
+          "question": "L'ouverture de mur inclut-elle la reprise/fermeture du mur après passage et les finitions ?",
+          "severity": "must_have",
+          "reason": "La remise en état après ouverture influence le chiffrage démolition et finitions.",
+          "related_task_ids": [
+            "T3"
+          ],
+          "rank": 6,
+          "confidence": 0.94
+        },
+        {
+          "question": "Le diamètre '100' de l'évacuation correspond-il bien à une évacuation existante exploitable pour les 2 douches, et à quelle distance se trouve-t-elle ?",
+          "severity": "must_have",
+          "reason": "La faisabilité et la quantité de réseau à créer dépendent de la position de l'évacuation 100.",
+          "related_task_ids": [
+            "T1",
+            "T3"
+          ],
+          "rank": 7,
+          "confidence": 0.92
+        }
+      ],
+      "confidence": 0.9,
+      "raw_output": {
+        "provider": "openai",
+        "model": "gpt-5.4"
+      }
+    }
+  }
+}

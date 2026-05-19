@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-import base64
-import json
-import mimetypes
 import os
 from pathlib import Path
 from typing import Protocol
@@ -13,6 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from scope_modeler.extractors.base import ExtractedObservation, ExtractorResult, ObservationValue
 from scope_modeler.inputs import InputCapture
+from scope_modeler.llm import OpenAIStructuredClient
 from scope_modeler.models import (
     ClarifyingQuestion,
     GapSeverity,
@@ -125,29 +123,17 @@ class OpenAIVisionModelClient:
 
     def __init__(
         self,
-        api_key: str | None = None,
         model: str | None = None,
     ) -> None:
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
-        if not self.api_key:
-            raise RuntimeError(
-                "OPENAI_API_KEY is required to use OpenAIVisionModelClient. "
-                "Unit tests should use a fake VisionModelClient."
-            )
         self.model = model or os.getenv("VISION_MODEL", "gpt-5.4")
+        self.client = OpenAIStructuredClient()
 
     def extract_from_image(
         self,
         image_path: Path,
         language_hint: str | None = None,
     ) -> VisionExtractionDraft:
-        from openai import OpenAI
-
         image_path = Path(image_path)
-        data_url = _image_to_data_url(image_path)
-        client = OpenAI(api_key=self.api_key)
-        raw_schema = OpenAIVisionExtractionResponse.model_json_schema()
-        schema = _to_openai_strict_json_schema(raw_schema)
         prompt = (
             "Analyze this construction or renovation site photo. Return only JSON matching the "
             "provided schema, including every required field. Use [] for empty arrays. Do not "
@@ -161,31 +147,13 @@ class OpenAIVisionModelClient:
             "For site photos without explicit requested work, tasks should usually be an empty array. "
             f"Language hint: {language_hint or 'unknown'}."
         )
-        response = client.responses.create(
+        model_response = self.client.run_image(
             model=self.model,
-            input=[
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "input_text", "text": prompt},
-                        {"type": "input_image", "image_url": data_url, "detail": "auto"},
-                    ],
-                }
-            ],
-            text={
-                "format": {
-                    "type": "json_schema",
-                    "name": "vision_extraction_draft",
-                    "schema": schema,
-                    "strict": True,
-                }
-            },
+            schema_name="vision_extraction_draft",
+            prompt=prompt,
+            image_path=image_path,
+            response_model=OpenAIVisionExtractionResponse,
         )
-        output_text = getattr(response, "output_text", None)
-        if not output_text:
-            raise RuntimeError("OpenAI vision response did not include output_text JSON.")
-        data = json.loads(output_text)
-        model_response = OpenAIVisionExtractionResponse.model_validate(data)
         return VisionExtractionDraft(
             **model_response.model_dump(mode="python"),
             raw_output={
@@ -333,51 +301,3 @@ class VisionExtractor:
             confidence=confidence,
             provenance=[self._provenance(capture, confidence)],
         )
-
-
-def _image_to_data_url(image_path: Path) -> str:
-    media_type = mimetypes.guess_type(image_path)[0] or "application/octet-stream"
-    encoded = base64.b64encode(image_path.read_bytes()).decode("ascii")
-    return f"data:{media_type};base64,{encoded}"
-
-
-def _to_openai_strict_json_schema(schema: dict[str, object]) -> dict[str, object]:
-    strict_schema = dict(schema)
-    _make_schema_node_strict(strict_schema)
-    return strict_schema
-
-
-def _make_schema_node_strict(node: object) -> None:
-    if isinstance(node, dict):
-        for keyword in ("default", "title", "examples", "description"):
-            node.pop(keyword, None)
-
-        if "$ref" in node:
-            ref = node["$ref"]
-            node.clear()
-            node["$ref"] = ref
-            return
-
-        properties = node.get("properties")
-        if isinstance(properties, dict):
-            node["required"] = list(properties.keys())
-            node["additionalProperties"] = False
-
-        for key in ("$defs", "properties"):
-            child_mapping = node.get(key)
-            if isinstance(child_mapping, dict):
-                for child in child_mapping.values():
-                    _make_schema_node_strict(child)
-
-        items = node.get("items")
-        if items is not None:
-            _make_schema_node_strict(items)
-
-        for key in ("anyOf", "oneOf", "allOf"):
-            variants = node.get(key)
-            if isinstance(variants, list):
-                for variant in variants:
-                    _make_schema_node_strict(variant)
-    elif isinstance(node, list):
-        for item in node:
-            _make_schema_node_strict(item)

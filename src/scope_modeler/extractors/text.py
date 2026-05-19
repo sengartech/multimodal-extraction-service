@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Protocol
 
@@ -9,6 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from scope_modeler.extractors.base import ExtractedObservation, ExtractorResult, ObservationValue
 from scope_modeler.inputs import InputCapture
+from scope_modeler.llm.openai_client import OpenAIStructuredClient
 from scope_modeler.models import (
     ClarifyingQuestion,
     GapSeverity,
@@ -87,6 +89,19 @@ class TextExtractionDraft(BaseModel):
     raw_output: dict[str, object] = Field(default_factory=dict)
 
 
+class OpenAITextExtractionResponse(BaseModel):
+    """Strict OpenAI response shape for text extraction."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    observations: list[DraftObservation]
+    tasks: list[DraftTask]
+    materials: list[DraftMaterial]
+    assumptions: list[DraftObservation]
+    clarifying_questions: list[DraftQuestion]
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
 class TextModelClient(Protocol):
     """Client boundary for whatever text model produces the structured draft."""
 
@@ -96,6 +111,57 @@ class TextModelClient(Protocol):
         language: str | None,
     ) -> TextExtractionDraft:
         """Return a generic construction-scope draft for the provided text note."""
+
+
+class OpenAITextModelClient:
+    """OpenAI-backed text model client for contractor construction notes."""
+
+    def __init__(
+        self,
+        api_key: str | None = None,
+        model: str | None = None,
+    ) -> None:
+        self.model = model or os.getenv("TEXT_MODEL", "gpt-5.4")
+        self.client = OpenAIStructuredClient(api_key=api_key)
+
+    def extract_construction_scope(
+        self,
+        text: str,
+        language: str | None,
+    ) -> TextExtractionDraft:
+        response = self.client.run_text(
+            model=self.model,
+            schema_name="text_extraction_draft",
+            system_prompt=(
+                "You extract structured renovation/construction scope evidence from "
+                "contractor text notes."
+            ),
+            user_prompt=(
+                "Original contractor note:\n"
+                f"{text}\n\n"
+                f"Language: {language or 'unknown'}\n\n"
+                "Return only JSON matching the schema. Include every required field. "
+                "Use [] for empty arrays. Do not include extra keys outside the schema. "
+                "Extract observations, tasks, materials, assumptions, and clarifying questions. "
+                "The raw contractor note may be in French or another language, but the internal "
+                "canonical extraction output must be in English. Use English snake_case labels for "
+                "observations. Use English task names, point_a, point_b, material names, "
+                "assumptions, and clarifying questions. Preserve original-language construction "
+                "terms only when useful as domain terms or in evidence_quote, such as placo, "
+                "évacuation, and chauffe-eau. Normalize quantities where possible: for example, "
+                "\"2 mètres\" should become numeric 2.0 with label partition_wall_height_m, and "
+                "\"évacuation 100\" should become drainage_diameter_mm = 100 when supported. "
+                "For assumptions, use a human-readable English sentence in notes. "
+                "Do not use boolean-only assumption values unless the label and notes clearly explain the assumption."
+                "Do not translate capture IDs or enum values. Do not invent precise quantities "
+                "not present in the text. Mark missing pricing inputs as clarifying questions."
+            ),
+            response_model=OpenAITextExtractionResponse,
+        )
+        return TextExtractionDraft(
+            **response.model_dump(mode="python"),
+            raw_output={"provider": "openai", "model": self.model},
+        )
 
 
 def map_text_draft_to_extractor_result(
@@ -174,11 +240,10 @@ def map_text_draft_to_extractor_result(
                 capture,
                 extractor_name,
                 modality,
-                str(assumption.value),
+                _assumption_to_text(assumption),
                 assumption.confidence,
             )
             for assumption in draft.assumptions
-            if assumption.value is not None
         ],
         clarifying_questions=[
             ClarifyingQuestion(
@@ -197,6 +262,13 @@ def map_text_draft_to_extractor_result(
             "normalized_draft": draft.model_dump(mode="json"),
         },
     )
+
+def _assumption_to_text(assumption: DraftObservation) -> str:
+    if assumption.notes:
+        return assumption.notes
+    if assumption.value is not None and not isinstance(assumption.value, bool):
+        return str(assumption.value)
+    return assumption.label.replace("_", " ")
 
 
 class LLMTextExtractor:

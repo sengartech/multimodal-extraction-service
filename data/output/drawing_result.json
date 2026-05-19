@@ -1,0 +1,1171 @@
+{
+  "capture_id": "drawing_floor_plan_001",
+  "extractor_name": "openai_two_pass_drawing_parser_v1",
+  "modality": "drawing",
+  "observations": [
+    {
+      "label": "space_type",
+      "value": "single_rectangular_room",
+      "confidence": 0.73,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.73,
+        "notes": null
+      },
+      "notes": "One primary enclosed space is depicted; room function is not labeled."
+    },
+    {
+      "label": "room_outline_present",
+      "value": true,
+      "confidence": 0.78,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.78,
+        "notes": null
+      },
+      "notes": "Four wall segments form a simple rectangle."
+    },
+    {
+      "label": "wall_count_visible",
+      "value": 4,
+      "confidence": 0.77,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.77,
+        "notes": null
+      },
+      "notes": "No interior partitions are clearly shown."
+    },
+    {
+      "label": "interior_partitions_present",
+      "value": false,
+      "confidence": 0.69,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.69,
+        "notes": null
+      },
+      "notes": "Absence of internal walls in the provided geometry summary."
+    },
+    {
+      "label": "opening_on_top_wall_left",
+      "value": "likely_door",
+      "confidence": 0.73,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.73,
+        "notes": null
+      },
+      "notes": "Likely existing door/opening near upper-left portion of top wall."
+    },
+    {
+      "label": "opening_on_top_wall_right",
+      "value": "possible_second_door_or_access_opening",
+      "confidence": 0.59,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.59,
+        "notes": null
+      },
+      "notes": "Geometry suggests another door/opening near the upper-right area, but interpretation is less certain than the left opening."
+    },
+    {
+      "label": "opening_count_interpretation",
+      "value": "1_to_2_openings_on_top_wall",
+      "confidence": 0.55,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.55,
+        "notes": null
+      },
+      "notes": "Need confirmation whether both symbols represent distinct usable openings."
+    },
+    {
+      "label": "electrical_annotation_present",
+      "value": "Elec",
+      "confidence": 0.79,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.79,
+        "notes": null
+      },
+      "notes": "Small boxed symbol at upper-left interior/wall zone likely marks an existing electrical element or electrical area."
+    },
+    {
+      "label": "electrical_symbol_location",
+      "value": "upper_left_inside_room_near_top_left_corner",
+      "confidence": 0.72,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.72,
+        "notes": null
+      },
+      "notes": "Meaning is not specific enough to infer scope."
+    },
+    {
+      "label": "round_symbol_on_bottom_wall",
+      "value": "unidentified_fixture_or_marker",
+      "confidence": 0.42,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.42,
+        "notes": null
+      },
+      "notes": "Could indicate a device, vent, outlet, drain, or note marker; not reliable enough to classify."
+    },
+    {
+      "label": "ceiling_height_annotation",
+      "value": "2.60",
+      "confidence": 0.93,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.93,
+        "notes": null
+      },
+      "notes": "Likely room height, unit not explicitly stated but commonly meters in this notation."
+    },
+    {
+      "label": "dimensioning_present",
+      "value": true,
+      "confidence": 0.84,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.84,
+        "notes": null
+      },
+      "notes": "Sketch appears dimensioned, but several values are ambiguous or unitless."
+    },
+    {
+      "label": "overall_horizontal_dimension_possible",
+      "value": "approximately_370_or_430_uncertain",
+      "confidence": 0.45,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.45,
+        "notes": null
+      },
+      "notes": "A principal room width/length is likely intended, but exact reading and unit basis are unclear."
+    },
+    {
+      "label": "door_related_subdimensions_present",
+      "value": true,
+      "confidence": 0.68,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.68,
+        "notes": null
+      },
+      "notes": "Several smaller dimensions seem tied to door or wall-jamb details, but not enough for takeoff without confirmation."
+    },
+    {
+      "label": "hatched_detail_near_right_opening",
+      "value": "threshold_or_wall_build_up_or_step",
+      "confidence": 0.41,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.41,
+        "notes": null
+      },
+      "notes": "Interpretation uncertain; could affect floor, door, or masonry scope if confirmed."
+    },
+    {
+      "label": "drawing_intent",
+      "value": "existing_state_or_layout_sketch",
+      "confidence": 0.71,
+      "provenance": {
+        "modality": "drawing",
+        "capture_id": "drawing_floor_plan_001",
+        "extractor": "openai_two_pass_drawing_parser_v1",
+        "confidence": 0.71,
+        "notes": null
+      },
+      "notes": "Geometry supports survey/layout understanding more than confirmed construction scope."
+    }
+  ],
+  "candidate_tasks": [
+    {
+      "task_id": "t1",
+      "category": "general",
+      "name": {
+        "value": "Verify room layout and dimensions on site",
+        "confidence": 0.87,
+        "provenance": [
+          {
+            "modality": "drawing",
+            "capture_id": "drawing_floor_plan_001",
+            "extractor": "openai_two_pass_drawing_parser_v1",
+            "confidence": 0.87,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "entire rectangular room perimeter including top-wall openings",
+        "confidence": 0.78,
+        "provenance": [
+          {
+            "modality": "drawing",
+            "capture_id": "drawing_floor_plan_001",
+            "extractor": "openai_two_pass_drawing_parser_v1",
+            "confidence": 0.78,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "confirmed as-built measurements and opening positions",
+        "confidence": 0.81,
+        "provenance": [
+          {
+            "modality": "drawing",
+            "capture_id": "drawing_floor_plan_001",
+            "extractor": "openai_two_pass_drawing_parser_v1",
+            "confidence": 0.81,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 1,
+      "confidence": 0.84,
+      "provenance": [
+        {
+          "modality": "drawing",
+          "capture_id": "drawing_floor_plan_001",
+          "extractor": "openai_two_pass_drawing_parser_v1",
+          "confidence": 0.84,
+          "notes": null
+        }
+      ]
+    }
+  ],
+  "candidate_materials": [],
+  "assumptions": [],
+  "clarifying_questions": [
+    {
+      "question": "Is this sketch showing existing conditions only, or does it represent planned renovation work in this room?",
+      "severity": "must_have",
+      "reason": "Without confirmation of intent, symbols should not be turned into priced construction scope.",
+      "related_task_ids": [
+        "t1"
+      ],
+      "rank": 1
+    },
+    {
+      "question": "Please confirm the room function and work area name (for example bedroom, hallway, utility room, or closet).",
+      "severity": "must_have",
+      "reason": "Room type affects pricing assumptions, trade relevance, and interpretation of the electrical and round symbols.",
+      "related_task_ids": [
+        "t1"
+      ],
+      "rank": 2
+    },
+    {
+      "question": "Are there one or two separate openings/doors along the top wall?",
+      "severity": "must_have",
+      "reason": "The geometry shows a likely left door and a second possible right opening, but the right-side symbol may be a detail rather than a separate opening.",
+      "related_task_ids": [
+        "t1"
+      ],
+      "rank": 3
+    },
+    {
+      "question": "What are the confirmed overall room dimensions and units? Several values are visible, including 370 and 4.30, but they are not reliably attributable.",
+      "severity": "must_have",
+      "reason": "Pricing and quantity takeoff require a confirmed length/width and unit system.",
+      "related_task_ids": [
+        "t1"
+      ],
+      "rank": 4
+    },
+    {
+      "question": "What do the smaller dimensions near the openings refer to (for example door width, wall return, jamb thickness, threshold, or offset)?",
+      "severity": "nice_to_have",
+      "reason": "Values such as 90, 120, 70, 26, and 20 appear near opening details but cannot be assigned confidently.",
+      "related_task_ids": [
+        "t1"
+      ],
+      "rank": 5
+    },
+    {
+      "question": "What does the boxed 'Elec' symbol represent: panel, outlet zone, switch position, or an existing service cabinet?",
+      "severity": "must_have",
+      "reason": "The electrical annotation is too vague to understand constraints, access, or exclusions.",
+      "related_task_ids": [],
+      "rank": 6
+    },
+    {
+      "question": "What is the round symbol on the bottom wall intended to represent?",
+      "severity": "nice_to_have",
+      "reason": "It may affect mechanical, plumbing, or electrical coordination, but is unreadable in the geometry summary.",
+      "related_task_ids": [],
+      "rank": 7
+    },
+    {
+      "question": "Does the hatched rectangle near the right-side opening indicate a threshold, step, wall build-up, or another existing feature?",
+      "severity": "nice_to_have",
+      "reason": "This could affect flooring, door, or masonry pricing if it is a physical construction element.",
+      "related_task_ids": [],
+      "rank": 8
+    },
+    {
+      "question": "Please confirm whether 'H = 2.60' is the clear ceiling height in meters for this entire room.",
+      "severity": "nice_to_have",
+      "reason": "Likely yes, but confirmation improves wall/ceiling quantity calculations.",
+      "related_task_ids": [
+        "t1"
+      ],
+      "rank": 9
+    }
+  ],
+  "confidence": 0.72,
+  "raw_output": {
+    "geometry_summary": {
+      "capture_id": "pass1",
+      "image_path": "data/input/drawings/floor_plan.png",
+      "primitives": [
+        {
+          "primitive_id": "p1",
+          "primitive_type": "room_outline",
+          "label": null,
+          "points": [
+            {
+              "x": 0.2,
+              "y": 0.58
+            },
+            {
+              "x": 0.2,
+              "y": 0.79
+            },
+            {
+              "x": 0.63,
+              "y": 0.79
+            },
+            {
+              "x": 0.63,
+              "y": 0.58
+            }
+          ],
+          "confidence": 0.69,
+          "notes": "Main hand-drawn rectangular room/space outline; approximate normalized page coordinates."
+        },
+        {
+          "primitive_id": "p2",
+          "primitive_type": "wall_lines",
+          "label": null,
+          "points": [
+            {
+              "x": 0.2,
+              "y": 0.58
+            },
+            {
+              "x": 0.63,
+              "y": 0.58
+            }
+          ],
+          "confidence": 0.78,
+          "notes": "Top horizontal wall line of main rectangle."
+        },
+        {
+          "primitive_id": "p3",
+          "primitive_type": "wall_lines",
+          "label": null,
+          "points": [
+            {
+              "x": 0.2,
+              "y": 0.58
+            },
+            {
+              "x": 0.2,
+              "y": 0.79
+            }
+          ],
+          "confidence": 0.78,
+          "notes": "Left vertical wall line."
+        },
+        {
+          "primitive_id": "p4",
+          "primitive_type": "wall_lines",
+          "label": null,
+          "points": [
+            {
+              "x": 0.2,
+              "y": 0.79
+            },
+            {
+              "x": 0.63,
+              "y": 0.79
+            }
+          ],
+          "confidence": 0.78,
+          "notes": "Bottom horizontal wall line."
+        },
+        {
+          "primitive_id": "p5",
+          "primitive_type": "wall_lines",
+          "label": null,
+          "points": [
+            {
+              "x": 0.63,
+              "y": 0.58
+            },
+            {
+              "x": 0.63,
+              "y": 0.79
+            }
+          ],
+          "confidence": 0.78,
+          "notes": "Right vertical wall line."
+        },
+        {
+          "primitive_id": "p6",
+          "primitive_type": "opening_marker",
+          "label": "door",
+          "points": [
+            {
+              "x": 0.26,
+              "y": 0.58
+            },
+            {
+              "x": 0.31,
+              "y": 0.58
+            },
+            {
+              "x": 0.31,
+              "y": 0.51
+            }
+          ],
+          "confidence": 0.73,
+          "notes": "Door opening indicated on top wall with swing arc near upper-left area."
+        },
+        {
+          "primitive_id": "p7",
+          "primitive_type": "opening_marker",
+          "label": "door",
+          "points": [
+            {
+              "x": 0.54,
+              "y": 0.55
+            },
+            {
+              "x": 0.67,
+              "y": 0.55
+            },
+            {
+              "x": 0.67,
+              "y": 0.4
+            },
+            {
+              "x": 0.58,
+              "y": 0.42
+            },
+            {
+              "x": 0.58,
+              "y": 0.55
+            }
+          ],
+          "confidence": 0.63,
+          "notes": "Second door or opening symbol above top wall near right side; includes hatched threshold/base and door leaf shown open."
+        },
+        {
+          "primitive_id": "p8",
+          "primitive_type": "fixture_symbol",
+          "label": "elec",
+          "points": [
+            {
+              "x": 0.2,
+              "y": 0.58
+            },
+            {
+              "x": 0.24,
+              "y": 0.58
+            },
+            {
+              "x": 0.24,
+              "y": 0.66
+            },
+            {
+              "x": 0.2,
+              "y": 0.66
+            }
+          ],
+          "confidence": 0.72,
+          "notes": "Small boxed symbol at upper-left inside wall area, annotated 'Elec'."
+        },
+        {
+          "primitive_id": "p9",
+          "primitive_type": "fixture_symbol",
+          "label": "unknown_round",
+          "points": [
+            {
+              "x": 0.42,
+              "y": 0.79
+            }
+          ],
+          "confidence": 0.42,
+          "notes": "Circular symbol centered on bottom wall; label resembles 'EV' or similar, unreadable."
+        },
+        {
+          "primitive_id": "p10",
+          "primitive_type": "dimension_marker",
+          "label": null,
+          "points": [
+            {
+              "x": 0.3,
+              "y": 0.61
+            },
+            {
+              "x": 0.3,
+              "y": 0.73
+            }
+          ],
+          "confidence": 0.55,
+          "notes": "Dashed vertical reference/dimension line near left-center."
+        },
+        {
+          "primitive_id": "p11",
+          "primitive_type": "dimension_marker",
+          "label": null,
+          "points": [
+            {
+              "x": 0.67,
+              "y": 0.56
+            },
+            {
+              "x": 0.67,
+              "y": 0.79
+            }
+          ],
+          "confidence": 0.55,
+          "notes": "Dashed vertical reference/dimension line near far right."
+        },
+        {
+          "primitive_id": "p12",
+          "primitive_type": "dimension_marker",
+          "label": null,
+          "points": [
+            {
+              "x": 0.24,
+              "y": 0.64
+            },
+            {
+              "x": 0.63,
+              "y": 0.64
+            }
+          ],
+          "confidence": 0.57,
+          "notes": "Horizontal dimension/reference line across interior."
+        },
+        {
+          "primitive_id": "p13",
+          "primitive_type": "dimension_marker",
+          "label": null,
+          "points": [
+            {
+              "x": 0.31,
+              "y": 0.68
+            },
+            {
+              "x": 0.63,
+              "y": 0.68
+            }
+          ],
+          "confidence": 0.57,
+          "notes": "Interior horizontal dimension arrow line."
+        },
+        {
+          "primitive_id": "p14",
+          "primitive_type": "dimension_marker",
+          "label": null,
+          "points": [
+            {
+              "x": 0.31,
+              "y": 0.71
+            },
+            {
+              "x": 0.63,
+              "y": 0.71
+            }
+          ],
+          "confidence": 0.57,
+          "notes": "Interior horizontal dimension arrow line."
+        },
+        {
+          "primitive_id": "p15",
+          "primitive_type": "annotation",
+          "label": "H = 2,60",
+          "points": [
+            {
+              "x": 0.77,
+              "y": 0.63
+            }
+          ],
+          "confidence": 0.92,
+          "notes": "Height annotation written to right of sketch."
+        },
+        {
+          "primitive_id": "p16",
+          "primitive_type": "unknown",
+          "label": null,
+          "points": [
+            {
+              "x": 0.58,
+              "y": 0.58
+            },
+            {
+              "x": 0.63,
+              "y": 0.58
+            },
+            {
+              "x": 0.63,
+              "y": 0.61
+            },
+            {
+              "x": 0.58,
+              "y": 0.61
+            }
+          ],
+          "confidence": 0.4,
+          "notes": "Hatched rectangular area at base of right-side opening/door; could be threshold, wall build-up, or step."
+        },
+        {
+          "primitive_id": "p17",
+          "primitive_type": "annotation",
+          "label": null,
+          "points": [
+            {
+              "x": 0.19,
+              "y": 0.85
+            },
+            {
+              "x": 0.76,
+              "y": 0.85
+            }
+          ],
+          "confidence": 0.39,
+          "notes": "Long underline separating sketch from handwritten notes below."
+        }
+      ],
+      "dimensions": [
+        {
+          "label": "90",
+          "value": 90.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.69,
+          "notes": "Dimension near upper center-left above top wall/opening."
+        },
+        {
+          "label": "120",
+          "value": 120.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.67,
+          "notes": "Dimension near top wall toward center-right."
+        },
+        {
+          "label": "160",
+          "value": 160.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.59,
+          "notes": "Possible dimension written near top wall right of 120; handwriting unclear."
+        },
+        {
+          "label": "70",
+          "value": 70.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.61,
+          "notes": "Dimension adjacent to right-side opening/door jamb."
+        },
+        {
+          "label": "26",
+          "value": 26.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.56,
+          "notes": "Repeated small dimension near right-side vertical detail."
+        },
+        {
+          "label": "20",
+          "value": 20.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.48,
+          "notes": "Possible small dimension near right-side detail; low confidence."
+        },
+        {
+          "label": "370",
+          "value": 370.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.65,
+          "notes": "Central handwritten dimension, possibly overall internal width/length."
+        },
+        {
+          "label": "206",
+          "value": 206.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.47,
+          "notes": "Interior horizontal dimension; handwriting uncertain."
+        },
+        {
+          "label": "1220",
+          "value": 1220.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.62,
+          "notes": "Interior lower horizontal dimension."
+        },
+        {
+          "label": "300",
+          "value": 300.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.82,
+          "notes": "Large dimension centered in lower interior."
+        },
+        {
+          "label": "23",
+          "value": 23.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.55,
+          "notes": "Small vertical dimension at lower-left corner."
+        },
+        {
+          "label": "300",
+          "value": 300.0,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.72,
+          "notes": "Bottom horizontal dimension near lower-left/bottom edge."
+        },
+        {
+          "label": "4.30",
+          "value": 4.3,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.64,
+          "notes": "Top-left note may read 4.30 near door swing."
+        },
+        {
+          "label": "2.60",
+          "value": 2.6,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.93,
+          "notes": "Height annotation from 'H = 2,60'."
+        },
+        {
+          "label": "unknown",
+          "value": null,
+          "unit": null,
+          "is_explicit": true,
+          "confidence": 0.2,
+          "notes": "Additional handwritten dimensions/text below sketch not reliably legible."
+        }
+      ],
+      "labels": [
+        "Elec",
+        "H = 2,60",
+        "90",
+        "120",
+        "160",
+        "70",
+        "26",
+        "370",
+        "206",
+        "1220",
+        "300",
+        "23",
+        "4.30"
+      ],
+      "confidence": 0.65
+    },
+    "semantic_inference": {
+      "inferred_work_area": "Single rectangular room or enclosed interior space shown in plan view, with notes suggesting an existing layout survey rather than clearly marked new work.",
+      "observations": [
+        {
+          "label": "space_type",
+          "value": "single_rectangular_room",
+          "confidence": 0.73,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.73,
+            "notes": "Based on one main rectangular room outline."
+          },
+          "notes": "One primary enclosed space is depicted; room function is not labeled."
+        },
+        {
+          "label": "room_outline_present",
+          "value": true,
+          "confidence": 0.78,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.78,
+            "notes": "Derived from p1-p5."
+          },
+          "notes": "Four wall segments form a simple rectangle."
+        },
+        {
+          "label": "wall_count_visible",
+          "value": 4,
+          "confidence": 0.77,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.77,
+            "notes": "Derived from p2-p5."
+          },
+          "notes": "No interior partitions are clearly shown."
+        },
+        {
+          "label": "interior_partitions_present",
+          "value": false,
+          "confidence": 0.69,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.69,
+            "notes": "No interior partition primitives summarized."
+          },
+          "notes": "Absence of internal walls in the provided geometry summary."
+        },
+        {
+          "label": "opening_on_top_wall_left",
+          "value": "likely_door",
+          "confidence": 0.73,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.73,
+            "notes": "Based on p6 with door swing geometry."
+          },
+          "notes": "Likely existing door/opening near upper-left portion of top wall."
+        },
+        {
+          "label": "opening_on_top_wall_right",
+          "value": "possible_second_door_or_access_opening",
+          "confidence": 0.59,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.59,
+            "notes": "Based on p7 and adjacent p16 hatch detail."
+          },
+          "notes": "Geometry suggests another door/opening near the upper-right area, but interpretation is less certain than the left opening."
+        },
+        {
+          "label": "opening_count_interpretation",
+          "value": "1_to_2_openings_on_top_wall",
+          "confidence": 0.55,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.55,
+            "notes": "Two opening markers exist, but one may be a detail or alternate notation."
+          },
+          "notes": "Need confirmation whether both symbols represent distinct usable openings."
+        },
+        {
+          "label": "electrical_annotation_present",
+          "value": "Elec",
+          "confidence": 0.79,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.79,
+            "notes": "Based on p8 label."
+          },
+          "notes": "Small boxed symbol at upper-left interior/wall zone likely marks an existing electrical element or electrical area."
+        },
+        {
+          "label": "electrical_symbol_location",
+          "value": "upper_left_inside_room_near_top_left_corner",
+          "confidence": 0.72,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.72,
+            "notes": "From p8 position."
+          },
+          "notes": "Meaning is not specific enough to infer scope."
+        },
+        {
+          "label": "round_symbol_on_bottom_wall",
+          "value": "unidentified_fixture_or_marker",
+          "confidence": 0.42,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.42,
+            "notes": "Based on p9."
+          },
+          "notes": "Could indicate a device, vent, outlet, drain, or note marker; not reliable enough to classify."
+        },
+        {
+          "label": "ceiling_height_annotation",
+          "value": "2.60",
+          "confidence": 0.93,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.93,
+            "notes": "From annotation p15 and dimension entry 2.60."
+          },
+          "notes": "Likely room height, unit not explicitly stated but commonly meters in this notation."
+        },
+        {
+          "label": "dimensioning_present",
+          "value": true,
+          "confidence": 0.84,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.84,
+            "notes": "Multiple dimension markers and labels are present."
+          },
+          "notes": "Sketch appears dimensioned, but several values are ambiguous or unitless."
+        },
+        {
+          "label": "overall_horizontal_dimension_possible",
+          "value": "approximately_370_or_430_uncertain",
+          "confidence": 0.45,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.45,
+            "notes": "Potentially from labels 370 and 4.30; both uncertain in role and units."
+          },
+          "notes": "A principal room width/length is likely intended, but exact reading and unit basis are unclear."
+        },
+        {
+          "label": "door_related_subdimensions_present",
+          "value": true,
+          "confidence": 0.68,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.68,
+            "notes": "Labels such as 90, 120, 70, 26, 20 appear near opening areas."
+          },
+          "notes": "Several smaller dimensions seem tied to door or wall-jamb details, but not enough for takeoff without confirmation."
+        },
+        {
+          "label": "hatched_detail_near_right_opening",
+          "value": "threshold_or_wall_build_up_or_step",
+          "confidence": 0.41,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.41,
+            "notes": "Based on p16."
+          },
+          "notes": "Interpretation uncertain; could affect floor, door, or masonry scope if confirmed."
+        },
+        {
+          "label": "drawing_intent",
+          "value": "existing_state_or_layout_sketch",
+          "confidence": 0.71,
+          "provenance": {
+            "modality": "drawing",
+            "capture_id": "pass1",
+            "extractor": "semantic_inference",
+            "confidence": 0.71,
+            "notes": "No explicit demolition/new-work notation in summary."
+          },
+          "notes": "Geometry supports survey/layout understanding more than confirmed construction scope."
+        }
+      ],
+      "candidate_tasks": [
+        {
+          "task_id": "t1",
+          "category": "general",
+          "name": {
+            "value": "Verify room layout and dimensions on site",
+            "confidence": 0.87,
+            "provenance": [
+              {
+                "modality": "drawing",
+                "capture_id": "pass1",
+                "extractor": "semantic_inference",
+                "confidence": 0.87,
+                "notes": "Dimension set is present but partly ambiguous and unitless."
+              }
+            ],
+            "history": []
+          },
+          "point_a": {
+            "value": "entire rectangular room perimeter including top-wall openings",
+            "confidence": 0.78,
+            "provenance": [
+              {
+                "modality": "drawing",
+                "capture_id": "pass1",
+                "extractor": "semantic_inference",
+                "confidence": 0.78,
+                "notes": "Based on p1-p7 and dimensions."
+              }
+            ],
+            "history": []
+          },
+          "point_b": {
+            "value": "confirmed as-built measurements and opening positions",
+            "confidence": 0.81,
+            "provenance": [
+              {
+                "modality": "drawing",
+                "capture_id": "pass1",
+                "extractor": "semantic_inference",
+                "confidence": 0.81,
+                "notes": "Appropriate due to ambiguous dimensions and opening interpretation."
+              }
+            ],
+            "history": []
+          },
+          "step_number": 1,
+          "confidence": 0.84,
+          "provenance": [
+            {
+              "modality": "drawing",
+              "capture_id": "pass1",
+              "extractor": "semantic_inference",
+              "confidence": 0.84,
+              "notes": "Only layout verification is clearly supported by geometry alone."
+            }
+          ]
+        }
+      ],
+      "clarifying_questions": [
+        {
+          "question": "Is this sketch showing existing conditions only, or does it represent planned renovation work in this room?",
+          "severity": "must_have",
+          "reason": "Without confirmation of intent, symbols should not be turned into priced construction scope.",
+          "related_task_ids": [
+            "t1"
+          ],
+          "rank": 1
+        },
+        {
+          "question": "Please confirm the room function and work area name (for example bedroom, hallway, utility room, or closet).",
+          "severity": "must_have",
+          "reason": "Room type affects pricing assumptions, trade relevance, and interpretation of the electrical and round symbols.",
+          "related_task_ids": [
+            "t1"
+          ],
+          "rank": 2
+        },
+        {
+          "question": "Are there one or two separate openings/doors along the top wall?",
+          "severity": "must_have",
+          "reason": "The geometry shows a likely left door and a second possible right opening, but the right-side symbol may be a detail rather than a separate opening.",
+          "related_task_ids": [
+            "t1"
+          ],
+          "rank": 3
+        },
+        {
+          "question": "What are the confirmed overall room dimensions and units? Several values are visible, including 370 and 4.30, but they are not reliably attributable.",
+          "severity": "must_have",
+          "reason": "Pricing and quantity takeoff require a confirmed length/width and unit system.",
+          "related_task_ids": [
+            "t1"
+          ],
+          "rank": 4
+        },
+        {
+          "question": "What do the smaller dimensions near the openings refer to (for example door width, wall return, jamb thickness, threshold, or offset)?",
+          "severity": "nice_to_have",
+          "reason": "Values such as 90, 120, 70, 26, and 20 appear near opening details but cannot be assigned confidently.",
+          "related_task_ids": [
+            "t1"
+          ],
+          "rank": 5
+        },
+        {
+          "question": "What does the boxed 'Elec' symbol represent: panel, outlet zone, switch position, or an existing service cabinet?",
+          "severity": "must_have",
+          "reason": "The electrical annotation is too vague to understand constraints, access, or exclusions.",
+          "related_task_ids": [],
+          "rank": 6
+        },
+        {
+          "question": "What is the round symbol on the bottom wall intended to represent?",
+          "severity": "nice_to_have",
+          "reason": "It may affect mechanical, plumbing, or electrical coordination, but is unreadable in the geometry summary.",
+          "related_task_ids": [],
+          "rank": 7
+        },
+        {
+          "question": "Does the hatched rectangle near the right-side opening indicate a threshold, step, wall build-up, or another existing feature?",
+          "severity": "nice_to_have",
+          "reason": "This could affect flooring, door, or masonry pricing if it is a physical construction element.",
+          "related_task_ids": [],
+          "rank": 8
+        },
+        {
+          "question": "Please confirm whether 'H = 2.60' is the clear ceiling height in meters for this entire room.",
+          "severity": "nice_to_have",
+          "reason": "Likely yes, but confirmation improves wall/ceiling quantity calculations.",
+          "related_task_ids": [
+            "t1"
+          ],
+          "rank": 9
+        }
+      ],
+      "confidence": 0.72
+    }
+  }
+}

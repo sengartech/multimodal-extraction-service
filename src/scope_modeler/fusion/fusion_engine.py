@@ -9,6 +9,7 @@ from typing import Any, Protocol
 from pydantic import BaseModel, ConfigDict, Field
 
 from scope_modeler.extractors import ExtractorResult
+from scope_modeler.llm import OpenAIStructuredClient
 from scope_modeler.models import (
     ClarifyingQuestion,
     GapSeverity,
@@ -138,20 +139,11 @@ class FusionModelClient(Protocol):
 class OpenAIFusionModelClient:
     """OpenAI-backed fusion client using structured JSON output."""
 
-    def __init__(self, api_key: str | None = None, model: str | None = None) -> None:
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
-        if not self.api_key:
-            raise RuntimeError(
-                "OPENAI_API_KEY is required to use OpenAIFusionModelClient. "
-                "Unit tests should use a fake FusionModelClient."
-            )
+    def __init__(self, model: str | None = None) -> None:
         self.model = model or os.getenv("FUSION_MODEL", "gpt-5.4")
+        self.client = OpenAIStructuredClient()
 
     def synthesize_scope(self, evidence_bundle: EvidenceBundle) -> FusionDraft:
-        from openai import OpenAI
-
-        client = OpenAI(api_key=self.api_key)
-        schema = _to_openai_strict_json_schema(OpenAIFusionResponse.model_json_schema())
         prompt = (
             "Synthesize a final renovation/construction scope from the normalized evidence bundle "
             "only. Return only JSON matching the schema. Include every required field. Use [] for "
@@ -163,36 +155,16 @@ class OpenAIFusionModelClient:
             "it. Do not invent precise quantities. Preserve unknowns as assumptions or clarifying "
             "questions. Rank must-have pricing blockers first and mark unknowns explicitly."
         )
-        response = client.responses.create(
+        response_draft = self.client.run_text(
             model=self.model,
-            input=[
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "input_text", "text": prompt},
-                        {
-                            "type": "input_text",
-                            "text": json.dumps(
-                                evidence_bundle.model_dump(mode="json"),
-                                ensure_ascii=False,
-                            ),
-                        },
-                    ],
-                }
-            ],
-            text={
-                "format": {
-                    "type": "json_schema",
-                    "name": "fusion_draft",
-                    "schema": schema,
-                    "strict": True,
-                }
-            },
+            schema_name="fusion_draft",
+            system_prompt=prompt,
+            user_prompt=json.dumps(
+                evidence_bundle.model_dump(mode="json"),
+                ensure_ascii=False,
+            ),
+            response_model=OpenAIFusionResponse,
         )
-        output_text = getattr(response, "output_text", None)
-        if not output_text:
-            raise RuntimeError("OpenAI fusion response did not include output_text JSON.")
-        response_draft = OpenAIFusionResponse.model_validate(json.loads(output_text))
         return FusionDraft.model_validate(response_draft.model_dump(mode="python"))
 
 
@@ -459,45 +431,3 @@ def build_evidence_bundle(
         provenance_summary=provenance_summary,
         modality_summaries=modality_counts,
     )
-
-
-def _to_openai_strict_json_schema(schema: dict[str, object]) -> dict[str, object]:
-    strict_schema = dict(schema)
-    _make_schema_node_strict(strict_schema)
-    return strict_schema
-
-
-def _make_schema_node_strict(node: object) -> None:
-    if isinstance(node, dict):
-        for keyword in ("default", "title", "examples", "description"):
-            node.pop(keyword, None)
-
-        if "$ref" in node:
-            ref = node["$ref"]
-            node.clear()
-            node["$ref"] = ref
-            return
-
-        properties = node.get("properties")
-        if isinstance(properties, dict):
-            node["required"] = list(properties.keys())
-            node["additionalProperties"] = False
-
-        for key in ("$defs", "properties"):
-            child_mapping = node.get(key)
-            if isinstance(child_mapping, dict):
-                for child in child_mapping.values():
-                    _make_schema_node_strict(child)
-
-        items = node.get("items")
-        if items is not None:
-            _make_schema_node_strict(items)
-
-        for key in ("anyOf", "oneOf", "allOf"):
-            variants = node.get(key)
-            if isinstance(variants, list):
-                for variant in variants:
-                    _make_schema_node_strict(variant)
-    elif isinstance(node, list):
-        for item in node:
-            _make_schema_node_strict(item)

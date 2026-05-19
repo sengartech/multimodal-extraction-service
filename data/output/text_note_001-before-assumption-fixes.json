@@ -1,0 +1,812 @@
+{
+  "capture_id": "text_note_001",
+  "extractor_name": "llm_text_extractor_v1",
+  "modality": "text",
+  "observations": [
+    {
+      "label": "shower_count",
+      "value": 2,
+      "confidence": 0.98,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.98,
+        "notes": null
+      },
+      "notes": "Two locker-room showers are to be created."
+    },
+    {
+      "label": "partition_wall_height_m",
+      "value": 2,
+      "confidence": 0.97,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.97,
+        "notes": null
+      },
+      "notes": "Placo wall height specified as 2 meters."
+    },
+    {
+      "label": "partition_wall_full_height",
+      "value": false,
+      "confidence": 0.99,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.99,
+        "notes": null
+      },
+      "notes": "Wall is explicitly not full height."
+    },
+    {
+      "label": "drainage_diameter_mm",
+      "value": 100,
+      "confidence": 0.92,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.92,
+        "notes": null
+      },
+      "notes": "Existing drainage noted as evacuation 100, likely 100 mm."
+    },
+    {
+      "label": "water_heater_installation_required",
+      "value": true,
+      "confidence": 0.98,
+      "provenance": {
+        "modality": "text",
+        "capture_id": "text_note_001",
+        "extractor": "llm_text_extractor_v1",
+        "confidence": 0.98,
+        "notes": null
+      },
+      "notes": "Water heater installation and connection are included."
+    }
+  ],
+  "candidate_tasks": [
+    {
+      "task_id": "task_1",
+      "category": "plumbing",
+      "name": {
+        "value": "Create locker-room showers",
+        "confidence": 0.83,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.83,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "locker room area",
+        "confidence": 0.83,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.83,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "new shower locations",
+        "confidence": 0.83,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.83,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 1,
+      "confidence": 0.83,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.83,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_2",
+      "category": "walls",
+      "name": {
+        "value": "Build placo partition wall",
+        "confidence": 0.92,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.92,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "locker room area",
+        "confidence": 0.92,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.92,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "new partition location",
+        "confidence": 0.92,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.92,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 2,
+      "confidence": 0.92,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.92,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_3",
+      "category": "demolition",
+      "name": {
+        "value": "Open wall to access existing drainage",
+        "confidence": 0.9,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.9,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "existing wall",
+        "confidence": 0.9,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.9,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "evacuation 100 connection point",
+        "confidence": 0.9,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.9,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 3,
+      "confidence": 0.9,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.9,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_4",
+      "category": "plumbing",
+      "name": {
+        "value": "Connect shower drainage to existing evacuation",
+        "confidence": 0.78,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.78,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "new showers",
+        "confidence": 0.78,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.78,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "existing evacuation 100",
+        "confidence": 0.78,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.78,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 4,
+      "confidence": 0.78,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.78,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "task_id": "task_5",
+      "category": "plumbing",
+      "name": {
+        "value": "Install and connect water heater",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_a": {
+        "value": "water heater location",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "point_b": {
+        "value": "plumbing and service connections",
+        "confidence": 0.95,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.95,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "step_number": 5,
+      "confidence": 0.95,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.95,
+          "notes": null
+        }
+      ]
+    }
+  ],
+  "candidate_materials": [
+    {
+      "material_id": "mat_1",
+      "name": {
+        "value": "placo partition wall system",
+        "confidence": 0.84,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.84,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 2.0,
+        "confidence": 0.84,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.84,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "m_height",
+      "related_task_ids": [
+        "task_2"
+      ]
+    },
+    {
+      "material_id": "mat_2",
+      "name": {
+        "value": "water heater (chauffe-eau)",
+        "confidence": 0.96,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.96,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 1.0,
+        "confidence": 0.96,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.96,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "unit",
+      "related_task_ids": [
+        "task_5"
+      ]
+    },
+    {
+      "material_id": "mat_3",
+      "name": {
+        "value": "drainage connection to evacuation 100",
+        "confidence": 0.63,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.63,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "estimated_quantity": {
+        "value": 1.0,
+        "confidence": 0.63,
+        "provenance": [
+          {
+            "modality": "text",
+            "capture_id": "text_note_001",
+            "extractor": "llm_text_extractor_v1",
+            "confidence": 0.63,
+            "notes": null
+          }
+        ],
+        "history": []
+      },
+      "unit": "allowance",
+      "related_task_ids": [
+        "task_4"
+      ]
+    }
+  ],
+  "assumptions": [
+    {
+      "value": "True",
+      "confidence": 0.79,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.79,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "True",
+      "confidence": 0.62,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.62,
+          "notes": null
+        }
+      ],
+      "history": []
+    },
+    {
+      "value": "True",
+      "confidence": 0.8,
+      "provenance": [
+        {
+          "modality": "text",
+          "capture_id": "text_note_001",
+          "extractor": "llm_text_extractor_v1",
+          "confidence": 0.8,
+          "notes": null
+        }
+      ],
+      "history": []
+    }
+  ],
+  "clarifying_questions": [
+    {
+      "question": "What are the exact dimensions and length of the placo partition wall, beyond the stated 2 m height?",
+      "severity": "must_have",
+      "reason": "Wall length and build-up are required for accurate pricing and material takeoff.",
+      "related_task_ids": [
+        "task_2"
+      ],
+      "rank": 1
+    },
+    {
+      "question": "What are the exact locations of the two new showers and the water heater?",
+      "severity": "must_have",
+      "reason": "Precise positioning is required to price pipe runs, wall opening scope, and installation labor.",
+      "related_task_ids": [
+        "task_1",
+        "task_3",
+        "task_4",
+        "task_5"
+      ],
+      "rank": 2
+    },
+    {
+      "question": "Does the scope include shower trays, mixers, shower screens/curtains, and sanitary accessories for the two showers?",
+      "severity": "must_have",
+      "reason": "The note mentions creating showers but does not define fixture supply scope.",
+      "related_task_ids": [
+        "task_1"
+      ],
+      "rank": 3
+    },
+    {
+      "question": "Is hot and cold water distribution to the two showers included, and from which existing supply points?",
+      "severity": "must_have",
+      "reason": "Only drainage recovery and water heater installation are stated; supply connections are not fully defined.",
+      "related_task_ids": [
+        "task_1",
+        "task_5"
+      ],
+      "rank": 4
+    },
+    {
+      "question": "What capacity, type, and specification is required for the water heater (chauffe-eau)?",
+      "severity": "must_have",
+      "reason": "Equipment selection strongly affects pricing and connection requirements.",
+      "related_task_ids": [
+        "task_5"
+      ],
+      "rank": 5
+    },
+    {
+      "question": "Is electrical power supply for the water heater included in this scope?",
+      "severity": "must_have",
+      "reason": "Water heater installation may require dedicated electrical work not described in the note.",
+      "related_task_ids": [
+        "task_5"
+      ],
+      "rank": 6
+    },
+    {
+      "question": "What wall finishes, waterproofing, and shower-area finishes are required after opening the wall and building the partition?",
+      "severity": "must_have",
+      "reason": "Finishing scope is not defined and is necessary for complete pricing.",
+      "related_task_ids": [
+        "task_2",
+        "task_3",
+        "task_1"
+      ],
+      "rank": 7
+    }
+  ],
+  "confidence": 0.85,
+  "raw_output": {
+    "model_raw_output": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "normalized_draft": {
+      "observations": [
+        {
+          "label": "shower_count",
+          "value": 2,
+          "confidence": 0.98,
+          "notes": "Two locker-room showers are to be created.",
+          "evidence_quote": "Création de 2 douches vestiaires"
+        },
+        {
+          "label": "partition_wall_height_m",
+          "value": 2,
+          "confidence": 0.97,
+          "notes": "Placo wall height specified as 2 meters.",
+          "evidence_quote": "monter un mur en placo de 2 mètres de haut"
+        },
+        {
+          "label": "partition_wall_full_height",
+          "value": false,
+          "confidence": 0.99,
+          "notes": "Wall is explicitly not full height.",
+          "evidence_quote": "(pas pleine hauteur)"
+        },
+        {
+          "label": "drainage_diameter_mm",
+          "value": 100,
+          "confidence": 0.92,
+          "notes": "Existing drainage noted as evacuation 100, likely 100 mm.",
+          "evidence_quote": "récupérer évacuation 100"
+        },
+        {
+          "label": "water_heater_installation_required",
+          "value": true,
+          "confidence": 0.98,
+          "notes": "Water heater installation and connection are included.",
+          "evidence_quote": "Installation chauffe eau et raccordement"
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "task_1",
+          "category": "plumbing",
+          "name": "Create locker-room showers",
+          "point_a": "locker room area",
+          "point_b": "new shower locations",
+          "step_number": 1,
+          "confidence": 0.83
+        },
+        {
+          "task_id": "task_2",
+          "category": "walls",
+          "name": "Build placo partition wall",
+          "point_a": "locker room area",
+          "point_b": "new partition location",
+          "step_number": 2,
+          "confidence": 0.92
+        },
+        {
+          "task_id": "task_3",
+          "category": "demolition",
+          "name": "Open wall to access existing drainage",
+          "point_a": "existing wall",
+          "point_b": "evacuation 100 connection point",
+          "step_number": 3,
+          "confidence": 0.9
+        },
+        {
+          "task_id": "task_4",
+          "category": "plumbing",
+          "name": "Connect shower drainage to existing evacuation",
+          "point_a": "new showers",
+          "point_b": "existing evacuation 100",
+          "step_number": 4,
+          "confidence": 0.78
+        },
+        {
+          "task_id": "task_5",
+          "category": "plumbing",
+          "name": "Install and connect water heater",
+          "point_a": "water heater location",
+          "point_b": "plumbing and service connections",
+          "step_number": 5,
+          "confidence": 0.95
+        }
+      ],
+      "materials": [
+        {
+          "material_id": "mat_1",
+          "name": "placo partition wall system",
+          "estimated_quantity": 2.0,
+          "unit": "m_height",
+          "related_task_ids": [
+            "task_2"
+          ],
+          "confidence": 0.84
+        },
+        {
+          "material_id": "mat_2",
+          "name": "water heater (chauffe-eau)",
+          "estimated_quantity": 1.0,
+          "unit": "unit",
+          "related_task_ids": [
+            "task_5"
+          ],
+          "confidence": 0.96
+        },
+        {
+          "material_id": "mat_3",
+          "name": "drainage connection to evacuation 100",
+          "estimated_quantity": 1.0,
+          "unit": "allowance",
+          "related_task_ids": [
+            "task_4"
+          ],
+          "confidence": 0.63
+        }
+      ],
+      "assumptions": [
+        {
+          "label": "locker_room_showers_are_new_installations",
+          "value": true,
+          "confidence": 0.79,
+          "notes": "Interpreted from 'creation of 2 locker-room showers'.",
+          "evidence_quote": "Création de 2 douches vestiaires"
+        },
+        {
+          "label": "partition_wall_is_for_shower_area_separation",
+          "value": true,
+          "confidence": 0.62,
+          "notes": "Likely related to the shower/locker-room layout, but not explicitly stated.",
+          "evidence_quote": "Création de 2 douches vestiaires monter un mur en placo"
+        },
+        {
+          "label": "existing_drainage_is_reused",
+          "value": true,
+          "confidence": 0.8,
+          "notes": "The note suggests opening the wall to reach an existing 100 mm drainage line.",
+          "evidence_quote": "Ouverture mur pour aller récupérer évacuation 100"
+        }
+      ],
+      "clarifying_questions": [
+        {
+          "question": "What are the exact dimensions and length of the placo partition wall, beyond the stated 2 m height?",
+          "severity": "must_have",
+          "reason": "Wall length and build-up are required for accurate pricing and material takeoff.",
+          "related_task_ids": [
+            "task_2"
+          ],
+          "rank": 1,
+          "confidence": 0.97
+        },
+        {
+          "question": "What are the exact locations of the two new showers and the water heater?",
+          "severity": "must_have",
+          "reason": "Precise positioning is required to price pipe runs, wall opening scope, and installation labor.",
+          "related_task_ids": [
+            "task_1",
+            "task_3",
+            "task_4",
+            "task_5"
+          ],
+          "rank": 2,
+          "confidence": 0.95
+        },
+        {
+          "question": "Does the scope include shower trays, mixers, shower screens/curtains, and sanitary accessories for the two showers?",
+          "severity": "must_have",
+          "reason": "The note mentions creating showers but does not define fixture supply scope.",
+          "related_task_ids": [
+            "task_1"
+          ],
+          "rank": 3,
+          "confidence": 0.93
+        },
+        {
+          "question": "Is hot and cold water distribution to the two showers included, and from which existing supply points?",
+          "severity": "must_have",
+          "reason": "Only drainage recovery and water heater installation are stated; supply connections are not fully defined.",
+          "related_task_ids": [
+            "task_1",
+            "task_5"
+          ],
+          "rank": 4,
+          "confidence": 0.9
+        },
+        {
+          "question": "What capacity, type, and specification is required for the water heater (chauffe-eau)?",
+          "severity": "must_have",
+          "reason": "Equipment selection strongly affects pricing and connection requirements.",
+          "related_task_ids": [
+            "task_5"
+          ],
+          "rank": 5,
+          "confidence": 0.98
+        },
+        {
+          "question": "Is electrical power supply for the water heater included in this scope?",
+          "severity": "must_have",
+          "reason": "Water heater installation may require dedicated electrical work not described in the note.",
+          "related_task_ids": [
+            "task_5"
+          ],
+          "rank": 6,
+          "confidence": 0.92
+        },
+        {
+          "question": "What wall finishes, waterproofing, and shower-area finishes are required after opening the wall and building the partition?",
+          "severity": "must_have",
+          "reason": "Finishing scope is not defined and is necessary for complete pricing.",
+          "related_task_ids": [
+            "task_2",
+            "task_3",
+            "task_1"
+          ],
+          "rank": 7,
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.85,
+      "raw_output": {
+        "provider": "openai",
+        "model": "gpt-5.4"
+      }
+    }
+  }
+}

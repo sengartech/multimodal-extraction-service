@@ -8,7 +8,7 @@ from scope_modeler.fusion import (
     FusionEngine,
     OpenAIFusionResponse,
 )
-from scope_modeler.fusion.fusion_engine import _to_openai_strict_json_schema
+from scope_modeler.llm.schema import to_openai_strict_json_schema
 from scope_modeler.models import (
     CaptureType,
     GapSeverity,
@@ -172,7 +172,7 @@ def test_fusion_engine_returns_scope_brief_from_fake_model_client():
 
 
 def test_openai_fusion_response_strict_schema_is_sanitized():
-    strict_schema = _to_openai_strict_json_schema(
+    strict_schema = to_openai_strict_json_schema(
         OpenAIFusionResponse.model_json_schema()
     )
 

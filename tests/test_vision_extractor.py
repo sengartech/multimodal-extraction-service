@@ -2,15 +2,15 @@ import pytest
 
 from scope_modeler.extractors import (
     ExtractorResult,
+    OpenAIVisionExtractionResponse,
     VisionDraftQuestion,
     VisionDraftTask,
     VisionExtractionDraft,
-    OpenAIVisionExtractionResponse,
     VisionExtractor,
     VisionObservation,
 )
-from scope_modeler.extractors.vision import _to_openai_strict_json_schema
 from scope_modeler.inputs import load_manifest
+from scope_modeler.llm.schema import to_openai_strict_json_schema
 from scope_modeler.models import GapSeverity, Modality, TaskCategory
 
 
@@ -97,14 +97,14 @@ def test_vision_extractor_rejects_non_photo_capture():
 
 def test_openai_response_schema_excludes_internal_raw_output():
     raw_schema = OpenAIVisionExtractionResponse.model_json_schema()
-    strict_schema = _to_openai_strict_json_schema(raw_schema)
+    strict_schema = to_openai_strict_json_schema(raw_schema)
 
     assert "raw_output" not in strict_schema["properties"]
     assert "raw_output" not in strict_schema["required"]
 
 
 def test_openai_strict_schema_requires_all_object_properties():
-    strict_schema = _to_openai_strict_json_schema(
+    strict_schema = to_openai_strict_json_schema(
         OpenAIVisionExtractionResponse.model_json_schema()
     )
 
@@ -120,7 +120,7 @@ def test_openai_strict_schema_requires_all_object_properties():
 
 
 def test_openai_strict_schema_removes_defaults_titles_descriptions_and_ref_siblings():
-    strict_schema = _to_openai_strict_json_schema(
+    strict_schema = to_openai_strict_json_schema(
         OpenAIVisionExtractionResponse.model_json_schema()
     )
 
@@ -131,7 +131,7 @@ def test_openai_strict_schema_removes_defaults_titles_descriptions_and_ref_sibli
 
 
 def test_openai_strict_schema_sets_additional_properties_false_on_all_objects():
-    strict_schema = _to_openai_strict_json_schema(
+    strict_schema = to_openai_strict_json_schema(
         OpenAIVisionExtractionResponse.model_json_schema()
     )
 
