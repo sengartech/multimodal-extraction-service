@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, ConfigDict, Field, computed_field, model_validator
 
 from scope_modeler.models.enums import (
@@ -69,6 +71,60 @@ class ClarifyingQuestion(BaseModel):
     rank: int = Field(ge=1)
 
 
+class WorkArea(BaseModel):
+    """Physical area affected by the scope."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    area_id: str
+    label: str
+    area_type: Literal["room", "wall", "facade", "zone", "unknown"]
+    location: str | None = None
+    surface_m2: float | None = None
+    notes: str | None = None
+    confidence: float = Field(ge=0.0, le=1.0)
+    provenance: list[Provenance] = Field(default_factory=list)
+
+
+class AccessRequirement(BaseModel):
+    """Access, protection, or coordination need for execution."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    requirement_id: str
+    requirement_type: Literal[
+        "scaffolding",
+        "site_access",
+        "protection",
+        "occupant_coordination",
+        "unknown",
+    ]
+    description: str
+    required: bool
+    confidence: float = Field(ge=0.0, le=1.0)
+    provenance: list[Provenance] = Field(default_factory=list)
+
+
+class RegulatoryRequirement(BaseModel):
+    """Approval or regulatory requirement that may affect pricing readiness."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    requirement_id: str
+    regime: Literal[
+        "declaration_prealable",
+        "batiments_de_france",
+        "copropriete_authorization",
+        "tva",
+        "unknown",
+    ]
+    description: str
+    status: Literal["required", "possibly_required", "not_required", "unknown"]
+    blocking: bool
+    confidence: float = Field(ge=0.0, le=1.0)
+    provenance: list[Provenance] = Field(default_factory=list)
+
+
 class PricingReadinessCriteria(BaseModel):
     """Explicit criteria used to decide whether a scope can be priced."""
 
@@ -80,6 +136,7 @@ class PricingReadinessCriteria(BaseModel):
     no_must_have_questions: bool
     average_task_confidence_at_least_070: bool
     no_unresolved_critical_conflicts: bool
+    no_blocking_regulatory_requirements: bool = True
 
 
 class PricingReadiness(BaseModel):
@@ -115,8 +172,19 @@ class ScopeBrief(BaseModel):
     assumptions: list[VersionedField[str]] = Field(default_factory=list)
     exclusions: list[VersionedField[str]] = Field(default_factory=list)
     clarifying_questions: list[ClarifyingQuestion] = Field(default_factory=list)
+    work_areas: list[WorkArea] = Field(default_factory=list)
+    access_requirements: list[AccessRequirement] = Field(default_factory=list)
+    regulatory_requirements: list[RegulatoryRequirement] = Field(default_factory=list)
     unresolved_critical_conflicts: list[str] = Field(default_factory=list)
     pricing_readiness: PricingReadiness | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def drop_computed_fields_from_input(cls, data):
+        if isinstance(data, dict):
+            data = dict(data)
+            data.pop("ordered_task_ids", None)
+        return data
 
     @model_validator(mode="after")
     def compute_pricing_readiness(self) -> "ScopeBrief":
@@ -145,6 +213,9 @@ class ScopeBrief(BaseModel):
             ),
             average_task_confidence_at_least_070=average_task_confidence >= 0.70,
             no_unresolved_critical_conflicts=not self.unresolved_critical_conflicts,
+            no_blocking_regulatory_requirements=not any(
+                requirement.blocking for requirement in self.regulatory_requirements
+            ),
         )
 
         blocking_reasons: list[str] = []
@@ -160,6 +231,8 @@ class ScopeBrief(BaseModel):
             blocking_reasons.append("average_task_confidence_below_0.70")
         if not criteria.no_unresolved_critical_conflicts:
             blocking_reasons.append("unresolved_critical_conflicts")
+        if not criteria.no_blocking_regulatory_requirements:
+            blocking_reasons.append("blocking_regulatory_requirements")
 
         pricing_ready = not blocking_reasons
         status = PricingReadinessStatus.READY if pricing_ready else PricingReadinessStatus.NOT_READY

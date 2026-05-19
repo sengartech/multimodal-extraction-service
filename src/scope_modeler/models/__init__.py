@@ -9,17 +9,21 @@ from scope_modeler.models.enums import (
 )
 from scope_modeler.models.provenance import Provenance
 from scope_modeler.models.scope import (
+    AccessRequirement,
     ClarifyingQuestion,
     Material,
     PricingReadiness,
     PricingReadinessCriteria,
+    RegulatoryRequirement,
     ScopeBrief,
     SourceCapture,
     Task,
+    WorkArea,
 )
 from scope_modeler.models.versioned import VersionedField, VersionHistoryEntry
 
 __all__ = [
+    "AccessRequirement",
     "CaptureType",
     "ClarifyingQuestion",
     "GapSeverity",
@@ -29,10 +33,12 @@ __all__ = [
     "PricingReadinessCriteria",
     "PricingReadinessStatus",
     "Provenance",
+    "RegulatoryRequirement",
     "ScopeBrief",
     "SourceCapture",
     "Task",
     "TaskCategory",
     "VersionHistoryEntry",
     "VersionedField",
+    "WorkArea",
 ]
