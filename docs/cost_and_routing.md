@@ -23,6 +23,42 @@ This gives three benefits:
 2. reproducibility: the same saved evidence can be inspected and reused
 3. debugging: if the final scope is wrong, I can check whether the issue came from text, drawing, vision, or fusion
 
+## Model selection
+
+For this assignment, I used `gpt-5.4` as the default model for real extraction and fusion calls.
+
+I would not use the strongest available model for every request by default in production. A better routing policy would be:
+
+- cheaper/smaller model for clean text or high-quality images
+- stronger model for blurry images, ambiguous drawings, or conflicting modalities
+- human review when confidence remains low after bounded retries
+
+## Retry and escalation policy
+
+I would keep retries bounded.
+
+Example production policy:
+
+1. run default extractor
+2. if schema validation fails, retry once with the same model
+3. if confidence is low or modalities conflict, escalate once to a stronger model
+4. if still unresolved, mark pricing as not ready and ask clarifying questions or send to human review
+
+The system should not keep calling models until it gets a convenient answer.
+
+## Human review threshold
+
+A job should be routed to human review or contractor follow-up when:
+
+- must-have clarifying questions remain
+- pricing readiness is false
+- drawing dimensions are ambiguous
+- photos are blurry or do not show the work area
+- text and visual evidence conflict
+- regulatory or TVA assumptions are required but not supported
+
+For this job, the final scope is intentionally `not_ready` for pricing because fixture details, wall length, waterproofing, water heater specs, exact room dimensions, and access conditions are unresolved.
+
 ## Actual call cost evidence
 
 I used OpenAI for the real model-backed extraction and fusion calls in this assignment.

@@ -189,31 +189,53 @@ The test suite covers:
 
 ```text
 src/scope_modeler/
+  __init__.py
+  __main__.py
   cli.py
-  inputs.py
-  models/
-    scope.py
-    provenance.py
-    versioned.py
-    enums.py
+  inputs/
+    __init__.py
+    manifest.py
   extractors/
+    __init__.py
+    base.py
+    audio.py
+    drawing.py
     text.py
     vision.py
-    drawing.py
-    audio.py
   fusion/
+    __init__.py
     fusion_engine.py
-    readiness.py
+  models/
+    __init__.py
+    enums.py
+    provenance.py
+    scope.py
+    versioned.py
   llm/
+    __init__.py
     openai_client.py
     schema.py
   eval/
+    __init__.py
     harness.py
 
 tests/
+  test_*.py
+
 docs/
-data/input/
-data/output/
+  *.md
+  screenshots/
+
+data/
+  input/
+    manifest.json
+    customer_text_fr.txt
+    audios/
+    drawings/
+    photos/
+  output/
+    *.json
+    before-fixes/
 ```
 
 ## Important outputs
